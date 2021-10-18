@@ -7,33 +7,114 @@
     tools:context=".SegundaActivity">
 
     <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="TextView"
-        tools:layout_editor_absoluteX="234dp"
-        tools:layout_editor_absoluteY="99dp" />
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="TextView"
-        tools:layout_editor_absoluteX="234dp"
-        tools:layout_editor_absoluteY="99dp" />
+        android:id="@+id/textView2"
+        android:layout_width="183dp"
+        android:layout_height="38dp"
+        android:layout_marginTop="16dp"
+        android:text="REGISTRO"
+        android:textAlignment="center"
+        android:textColor="@color/purple_700"
+        android:textSize="28dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/eTextoUsuario"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="232dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:id="@+id/textLayout1"
+        android:layout_width="330dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="416dp"
+        android:hint="Repite la  contraseña del usuario:"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.851"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
+            android:layout_width="243dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="8dp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textLayout2"
+        android:layout_width="326dp"
+        android:layout_height="67dp"
+        android:layout_marginTop="320dp"
+        android:hint="Introduce contraseña del usuario:"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.811"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="243dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="8dp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textLayout3"
+        android:layout_width="304dp"
+        android:layout_height="65dp"
+        android:layout_marginTop="236dp"
+        android:hint="Introduce email del usuario:"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.635"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="243dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="8dp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textLayout4"
+        android:layout_width="295dp"
+        android:layout_height="72dp"
+        android:layout_marginTop="68dp"
+        android:hint="Nombre de usuario:"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.612"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="243dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="8dp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:text="REGISTRARSE"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textLayout1" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textLayout5"
+        android:layout_width="297dp"
+        android:layout_height="66dp"
+        android:layout_marginTop="156dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.605"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="272dp"
             android:layout_height="wrap_content"
-            android:hint="hint" />
+            android:hint="Escribe tus apellidos:" />
     </com.google.android.material.textfield.TextInputLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

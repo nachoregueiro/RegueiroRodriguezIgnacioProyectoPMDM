@@ -19,14 +19,14 @@ class SegundaActivity : AppCompatActivity() {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
-        /*
+       /*
         val tvguardarDatos=findViewById<TextView>(R.id.etEmail)
         val etmail=findViewById<TextView>(R.id.etEmail)
         tvguardardatos.setOnClickListener{
             val SharedPrefs =getPreferences(Context.MODE_PRIVATE)
             var editor=sharedPrefs.edit()
             editor.putString("email",etEmail.text.ToString())
-        }
         */
+        }
+
     }
-}

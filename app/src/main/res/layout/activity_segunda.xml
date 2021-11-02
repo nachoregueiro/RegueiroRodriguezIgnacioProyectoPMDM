@@ -8,9 +8,10 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/tiNombre"
-        android:layout_width="227dp"
-        android:layout_height="38dp"
+        android:layout_width="239dp"
+        android:layout_height="46dp"
         android:layout_marginTop="50dp"
+        android:layout_marginBottom="10dp"
         app:layout_constraintBottom_toTopOf="@+id/tiApellido"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -20,7 +21,8 @@
             android:id="@+id/etNombre"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:hint="nombre de usuario:" />
+            android:hint="nombre de usuario:"
+            tools:ignore="TouchTargetSizeCheck" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <TextView
@@ -39,13 +41,13 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/tvguardardatos"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="28dp"
         android:text="REGISTRARSE"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.243"
+        app:layout_constraintHorizontal_bias="0.239"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tiRepiteContraseña" />
 
@@ -53,17 +55,17 @@
         android:id="@+id/btAtrás"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="28dp"
         android:text="ATRÁS"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.803"
+        app:layout_constraintHorizontal_bias="0.75"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tiRepiteContraseña" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/tiApellido"
-        android:layout_width="227dp"
-        android:layout_height="42dp"
+        android:layout_width="236dp"
+        android:layout_height="52dp"
         android:layout_marginTop="40dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -73,13 +75,14 @@
             android:id="@+id/etApellido"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:hint="introduce tu apellido:" />
+            android:hint="introduce tu apellido:"
+            tools:ignore="TouchTargetSizeCheck" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/tiEmail"
-        android:layout_width="232dp"
-        android:layout_height="46dp"
+        android:layout_width="241dp"
+        android:layout_height="52dp"
         android:layout_marginTop="40dp"
         android:hint="introduce email:"
         app:layout_constraintEnd_toEndOf="parent"
@@ -89,7 +92,8 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/etEmail"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            tools:ignore="TouchTargetSizeCheck" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout

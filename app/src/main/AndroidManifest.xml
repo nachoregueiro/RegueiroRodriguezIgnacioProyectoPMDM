@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.RegueiroRodriguezIgnacioProyectoPMDM">
         <activity
+            android:name=".ListaPeliculasActivity"
+            android:exported="true" />
+        <activity
+            android:name=".Item_Peliculas"
+            android:exported="true" />
+        <activity
             android:name=".SegundaActivity"
             android:exported="true" />
         <activity

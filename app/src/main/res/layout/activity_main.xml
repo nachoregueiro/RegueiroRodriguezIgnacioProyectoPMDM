@@ -18,43 +18,43 @@
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="183dp"
-        android:layout_height="38dp"
-        android:layout_marginTop="60dp"
+        android:layout_width="204dp"
+        android:layout_height="117dp"
+        android:layout_marginTop="16dp"
         android:text="LOGIN"
         android:textAlignment="center"
-        android:textColor="@color/purple_700"
+        android:textColor="#8BFF07"
         android:textSize="28dp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/tiNombre"
-        android:layout_width="232dp"
-        android:layout_height="46dp"
-        android:layout_marginStart="10dp"
+        android:layout_width="265dp"
+        android:layout_height="65dp"
         android:layout_marginTop="32dp"
         android:layout_marginBottom="60dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guideline3"
+        app:layout_constraintStart_toStartOf="@+id/guideline2"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.174">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/etNombre"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Introduce nombre de usuario:" />
+            android:layout_width="264dp"
+            android:layout_height="match_parent"
+            android:hint="Introduce nombre de usuario:"
+            tools:ignore="TouchTargetSizeCheck" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/tiContraseña"
-        android:layout_width="223dp"
-        android:layout_height="51dp"
+        android:layout_width="265dp"
+        android:layout_height="63dp"
         android:layout_marginBottom="1dp"
         app:layout_constraintBottom_toTopOf="@+id/btEntrar"
         app:layout_constraintEnd_toEndOf="parent"
@@ -64,9 +64,23 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/etContraseña"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:hint="Introduce contraseña:" />
     </com.google.android.material.textfield.TextInputLayout>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="62dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="329dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

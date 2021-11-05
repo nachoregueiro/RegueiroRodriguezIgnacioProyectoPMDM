@@ -3,7 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/regrodign/AndroidStudioProjects/RegueiroRodriguezIgnacioProyectoPMDM/app/src/main/res/layout/activity_main.xml" value="0.43125" />
+        <entry key="..\:/Users/regrodign/AndroidStudioProjects/RegueiroRodriguezIgnacioProyectoPMDM/app/src/main/res/layout/activity_item_peliculas.xml" value="0.32592592592592595" />
+        <entry key="..\:/Users/regrodign/AndroidStudioProjects/RegueiroRodriguezIgnacioProyectoPMDM/app/src/main/res/layout/activity_lista_peliculas.xml" value="0.32592592592592595" />
+        <entry key="..\:/Users/regrodign/AndroidStudioProjects/RegueiroRodriguezIgnacioProyectoPMDM/app/src/main/res/layout/activity_main.xml" value="0.67" />
         <entry key="..\:/Users/regrodign/AndroidStudioProjects/RegueiroRodriguezIgnacioProyectoPMDM/app/src/main/res/layout/activity_segunda.xml" value="0.33" />
       </map>
     </option>
@@ -13,5 +15,12 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.43125" />
+      </ProjectState>
+    </option>
   </component>
 </project>

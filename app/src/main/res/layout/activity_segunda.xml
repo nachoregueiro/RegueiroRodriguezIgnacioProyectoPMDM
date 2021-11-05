@@ -8,8 +8,8 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/tiNombre"
-        android:layout_width="239dp"
-        android:layout_height="46dp"
+        android:layout_width="242dp"
+        android:layout_height="74dp"
         android:layout_marginTop="50dp"
         android:layout_marginBottom="10dp"
         app:layout_constraintBottom_toTopOf="@+id/tiApellido"
@@ -41,7 +41,7 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <Button
-        android:id="@+id/tvguardardatos"
+        android:id="@+id/btGuardarDatos"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"

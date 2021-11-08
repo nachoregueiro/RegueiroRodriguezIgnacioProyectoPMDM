@@ -23,7 +23,7 @@
         android:layout_marginTop="16dp"
         android:text="LOGIN"
         android:textAlignment="center"
-        android:textColor="#8BFF07"
+        android:textColor="@color/purple_700"
         android:textSize="28dp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
@@ -33,8 +33,8 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/tiNombre"
-        android:layout_width="265dp"
-        android:layout_height="65dp"
+        android:layout_width="286dp"
+        android:layout_height="58dp"
         android:layout_marginTop="32dp"
         android:layout_marginBottom="60dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -45,7 +45,7 @@
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/etNombre"
-            android:layout_width="264dp"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:hint="Introduce nombre de usuario:"
             tools:ignore="TouchTargetSizeCheck" />
@@ -73,7 +73,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_begin="62dp" />
+        app:layout_constraintGuide_begin="41dp" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline3"

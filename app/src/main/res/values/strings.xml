@@ -1,3 +1,15 @@
 <resources>
+    <!-- Etiquetas -->
     <string name="app_name">RegueiroRodriguezIgnacioProyectoPMDM</string>
+
+    <!-- Hints -->
+    <string name="hint_introducir_nombre">nombre de usuario:</string>
+
+    <!-- Acciones-->
+
+    <!-- Nombres de pantalla-->
+
+
+
+
 </resources>

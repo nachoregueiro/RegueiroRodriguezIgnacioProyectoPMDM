@@ -1,8 +1,8 @@
 package entities
 
 class Pelicula(
-    var titulo: String ="interstellar",
-    var director:String ="christopher nolan",
-    var actor:String="Matthew McConaughey",
-    val url:String=""
+    var titulo:String,
+    var director:String,
+    var actor:String,
+    var url:String
 ) {}

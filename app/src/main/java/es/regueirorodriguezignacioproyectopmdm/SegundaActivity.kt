@@ -15,7 +15,7 @@ import java.util.regex.Pattern
 class SegundaActivity : AppCompatActivity() {
     private lateinit var  btAtrás : Button
     private lateinit var binding: ActivitySegundaBinding
-//mirar binding
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,12 +31,15 @@ class SegundaActivity : AppCompatActivity() {
         val btGuardarDatos=findViewById<TextView>(R.id.etEmail)
         val etEmail=findViewById<TextView>(R.id.etEmail)
 
-        btGuardarDatos.setOnClickListener{
+        binding.btGuardarDatos.setOnClickListener{
             val sharedPrefs = getSharedPreferences(
             "moviespreference", Context.MODE_PRIVATE)
             var editor=sharedPrefs.edit()
             editor.putString("email",etEmail.text.toString())
+            val intent=Intent(this,ListaPeliculasActivity::class.java)
+            startActivity(intent)
         }
+
 
     }
     private fun validarEmail(email: String): Boolean { //Metodo que comprueba si el email es correcto

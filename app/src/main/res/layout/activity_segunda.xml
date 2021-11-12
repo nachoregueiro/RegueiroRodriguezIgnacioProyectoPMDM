@@ -10,7 +10,7 @@
         android:id="@+id/tiNombre"
         android:layout_width="242dp"
         android:layout_height="74dp"
-        android:layout_marginTop="@dimen/margen_vertical_entreEdittexts"
+        android:layout_marginTop="20dp"
         android:layout_marginBottom="10dp"
         app:layout_constraintBottom_toTopOf="@+id/tiApellido"
         app:layout_constraintEnd_toEndOf="parent"
@@ -29,7 +29,7 @@
         android:id="@+id/textView2"
         android:layout_width="183dp"
         android:layout_height="38dp"
-        android:layout_marginTop="@dimen/margen_vertical_entreEdittexts"
+        android:layout_marginTop="32dp"
         android:text="REGISTRO"
         android:textAlignment="center"
         android:textColor="@color/purple_700"
@@ -37,17 +37,16 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/btGuardarDatos"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/margen_vertical_entreEdittexts"
+        android:layout_marginTop="20dp"
         android:text="REGISTRARSE"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.239"
+        app:layout_constraintHorizontal_bias="0.133"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tiRepiteContraseña" />
 
@@ -55,10 +54,10 @@
         android:id="@+id/btAtrás"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/margen_vertical_entreEdittexts"
+        android:layout_marginTop="16dp"
         android:text="ATRÁS"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.75"
+        app:layout_constraintHorizontal_bias="0.731"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tiRepiteContraseña" />
 
@@ -66,7 +65,7 @@
         android:id="@+id/tiApellido"
         android:layout_width="236dp"
         android:layout_height="52dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tiNombre">
@@ -83,7 +82,7 @@
         android:id="@+id/tiEmail"
         android:layout_width="241dp"
         android:layout_height="52dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="20dp"
         android:hint="introduce email:"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -116,7 +115,7 @@
         android:id="@+id/tiRepiteContraseña"
         android:layout_width="229dp"
         android:layout_height="55dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="20dp"
         android:hint="repite tu contraseña:"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

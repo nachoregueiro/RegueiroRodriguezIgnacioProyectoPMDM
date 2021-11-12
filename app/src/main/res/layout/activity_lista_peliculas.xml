@@ -8,42 +8,21 @@
     android:paddingVertical="@dimen/margen_pantalla_default_vertical"
     tools:context=".ListaPeliculasActivity">
 
-    <TextView
-        android:id="@+id/tvPeliculasNombre"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
 
-        android:layout_marginTop="16dp"
-        android:layout_marginStart="16dp"
 
-        android:text="TextView"
-        android:textSize="24sp"
+        <!-- siempre match_parent,wrap_content o 0dp porque
+        sino cambia el tamaño dependiendo del dispositivo que usemos-->
 
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvCountryList"
+        android:id="@+id/rvPeliculasList"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginTop="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
-        tools:ignore="UnknownIdInLayout"
-        />
-
-    <com.google.android.material.imageview.ShapeableImageView
-        android:id="@+id/iv_character"
-        android:layout_width="@dimen/imagen_lista_personajes_tamanho"
-        android:layout_height="@dimen/imagen_lista_personajes_tamanho"
-        android:padding="2.5dp"
-        tools:layout_editor_absoluteX="48dp"
-        tools:layout_editor_absoluteY="234dp"
-        tools:srcCompat="@tools:sample/avatars"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="UnknownIdInLayout" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -28,16 +28,18 @@ class PeliculasListaAdapter(val peliculas: List<Pelicula>,val miActivity:Activit
         return peliculas.size
     }
 
+    //este método sirve para permitir pasar los datos al Activity
     override fun onBindViewHolder(holder: PeliculasViewHolder, position: Int) {
+        //esto que muestre el número de elementos que va a aparecer
         val pelicula = peliculas.get(position)
+        holder.tvNombre.setText(pelicula.titulo)
+        Picasso.get().load(pelicula.url).into(holder.ivFoto)
 
-        }
-
+    }
 
     class PeliculasViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val tvNombre =itemView.findViewById<TextView>(R.id.tvPersonaje)
         val ivFoto =itemView.findViewById<ImageView>(R.id.iv_character)
-
     }
 
 

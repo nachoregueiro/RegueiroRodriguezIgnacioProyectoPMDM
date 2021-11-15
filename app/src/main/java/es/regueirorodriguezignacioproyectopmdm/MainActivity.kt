@@ -18,9 +18,15 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.btEntrar.setOnClickListener {
+            val intent = Intent(this, ListaPeliculasActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.btRegistro.setOnClickListener {
             val intent = Intent(this, SegundaActivity::class.java)
             startActivity(intent)
         }
+
     }
 
 

@@ -40,7 +40,6 @@ class SegundaActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-
     }
     private fun validarEmail(email: String): Boolean { //Metodo que comprueba si el email es correcto
         val pattern: Pattern = Patterns.EMAIL_ADDRESS

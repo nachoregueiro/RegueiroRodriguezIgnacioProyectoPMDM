@@ -8,8 +8,8 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/tiNombre"
-        android:layout_width="242dp"
-        android:layout_height="74dp"
+        android:layout_width="236dp"
+        android:layout_height="59dp"
         android:layout_marginTop="20dp"
         android:layout_marginBottom="10dp"
         app:layout_constraintBottom_toTopOf="@+id/tiApellido"
@@ -99,8 +99,9 @@
         android:id="@+id/tiContraseña"
         android:layout_width="233dp"
         android:layout_height="58dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="14dp"
         android:hint="introduce tu contraseña:"
+        app:layout_constraintBottom_toTopOf="@+id/tiRepiteContraseña"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tiEmail">
@@ -126,5 +127,12 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
     </com.google.android.material.textfield.TextInputLayout>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="85dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

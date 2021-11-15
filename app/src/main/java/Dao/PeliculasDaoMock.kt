@@ -11,7 +11,7 @@ class PeliculasDaoMock :PeliculasDao {
         val peli2=Pelicula("Aniquilación","Alex Garland","Natalie Portman","https://upload.wikimedia.org/wikipedia/ru/c/cd/Annihilation_%28film%29.jpg")
         val peli3=Pelicula("Ready Player One","Steven Spielberg","Tye Sheridan","https://cps-static.rovicorp.com/2/Open/TMDB4_2462/Program/34986035/_2by3/_derived_jpg_q90_600x800_m0/1fhtcqKMcGqRUu4QNoUGPnpX4bfv.jpg")
 
-        val listaPersonajes = listOf(peli)
+        val listaPersonajes = listOf(peli,peli1,peli2,peli3)
         return listaPersonajes
 
     }

@@ -11,21 +11,24 @@
         android:id="@+id/iv_character"
         android:layout_width="@dimen/imagen_lista_personajes_tamanho"
         android:layout_height="@dimen/imagen_lista_personajes_tamanho"
-        android:layout_marginStart="52dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
         android:padding="2.5dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints"
         tools:srcCompat="@tools:sample/avatars" />
 
+
+
+
     <TextView
         android:id="@+id/tvPersonaje"
-        android:layout_width="156dp"
-        android:layout_height="17dp"
-        android:layout_marginStart="36dp"
-        android:layout_marginTop="24dp"
+        android:layout_width="132dp"
+        android:layout_height="22dp"
+        android:layout_marginStart="76dp"
         android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/iv_character"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints" />

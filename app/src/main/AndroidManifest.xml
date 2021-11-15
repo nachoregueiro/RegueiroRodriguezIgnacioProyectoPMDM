@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="es.regueirorodriguezignacioproyectopmdm">
+    package="es.regueirorodriguezignacioproyectopmdm"
+    >
+    <uses-permission android:name="android.permission.INTERNET" ></uses-permission>
 
     <application
         android:allowBackup="true"
@@ -10,13 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.RegueiroRodriguezIgnacioProyectoPMDM">
         <activity
-            android:name=".item_peliculas"
-            android:exported="true" />
-        <activity
             android:name=".ListaPeliculasActivity"
-            android:exported="true" />
-        <activity
-            android:name=".Item_Peliculas"
             android:exported="true" />
         <activity
             android:name=".SegundaActivity"

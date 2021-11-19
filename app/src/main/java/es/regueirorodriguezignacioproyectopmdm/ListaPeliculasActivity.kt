@@ -30,5 +30,7 @@ class ListaPeliculasActivity : AppCompatActivity() {
         binding.rvPeliculasList.adapter =adapter
         binding.rvPeliculasList.layoutManager =layoutManager
 
+        setTitle("Lista de peliculas")
+
     }
 }

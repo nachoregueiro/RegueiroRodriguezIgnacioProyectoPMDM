@@ -99,7 +99,7 @@
         android:id="@+id/tiContraseña"
         android:layout_width="233dp"
         android:layout_height="58dp"
-        android:layout_marginTop="14dp"
+        android:layout_marginTop="20dp"
         android:hint="introduce tu contraseña:"
         app:layout_constraintBottom_toTopOf="@+id/tiRepiteContraseña"
         app:layout_constraintEnd_toEndOf="parent"
@@ -127,12 +127,5 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
     </com.google.android.material.textfield.TextInputLayout>
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_begin="85dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

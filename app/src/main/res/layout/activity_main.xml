@@ -33,20 +33,14 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/tiNombre"
-        android:layout_width="247dp"
-        android:layout_height="59dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginBottom="60dp"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-
-
-
-
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/guideline3"
-        app:layout_constraintStart_toStartOf="@+id/guideline2"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.174">
+        android:layout_width="@dimen/width_edittext_login"
+        android:layout_height="59dp"
+        android:layout_marginTop="20dp"
+        app:startIconDrawable="@drawable/ic_baseline_verified_user_24"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/etNombre"
@@ -59,12 +53,12 @@
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/tiContraseña"
         style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
-        android:layout_width="246dp"
+        android:layout_width="@dimen/width_edittext_login"
         android:layout_height="54dp"
+        android:layout_marginTop="32dp"
+        app:startIconDrawable="@drawable/ic_baseline_lock_24"
         android:layout_marginEnd="10dp"
-        android:layout_marginBottom="1dp"
         app:boxBackgroundColor="@android:color/transparent"
-        app:layout_constraintBottom_toTopOf="@+id/btEntrar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tiNombre">
@@ -75,20 +69,6 @@
             android:layout_height="match_parent"
             android:hint="Introduce contraseña:" />
     </com.google.android.material.textfield.TextInputLayout>
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_begin="73dp" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_begin="329dp" />
 
     <Button
         android:id="@+id/btRegistro"

@@ -37,6 +37,7 @@ class PeliculasListaAdapter(val peliculas: List<Pelicula>,val miActivity:Activit
 
         holder.layoutItemPeliculas.setOnClickListener(){
             val intent= Intent(holder.itemView.rootView.context,detalle_Pelicula_Activity::class.java)
+                intent.putExtra("Pelicula",pelicula)
             holder.itemView.rootView.context.startActivity(intent)
         }
 

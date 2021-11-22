@@ -12,6 +12,8 @@
         android:layout_height="59dp"
         android:layout_marginTop="20dp"
         android:layout_marginBottom="10dp"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        app:startIconDrawable="@drawable/usuario"
         app:layout_constraintBottom_toTopOf="@+id/tiApellido"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -67,6 +69,8 @@
         android:layout_height="52dp"
         android:layout_marginTop="20dp"
         app:layout_constraintEnd_toEndOf="parent"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        app:startIconDrawable="@drawable/ojos2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tiNombre">
 
@@ -84,6 +88,8 @@
         android:layout_height="52dp"
         android:layout_marginTop="20dp"
         android:hint="introduce email:"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        app:startIconDrawable="@drawable/mail"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tiApellido">
@@ -101,6 +107,8 @@
         android:layout_height="58dp"
         android:layout_marginTop="20dp"
         android:hint="introduce tu contraseña:"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+
         app:layout_constraintBottom_toTopOf="@+id/tiRepiteContraseña"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -118,6 +126,8 @@
         android:layout_height="55dp"
         android:layout_marginTop="20dp"
         android:hint="repite tu contraseña:"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        app:startIconDrawable="@drawable/ojos2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tiContraseña">

@@ -106,6 +106,7 @@
         android:layout_width="233dp"
         android:layout_height="58dp"
         android:layout_marginTop="20dp"
+        app:startIconDrawable="@drawable/cerrado"
         android:hint="introduce tu contraseña:"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
 

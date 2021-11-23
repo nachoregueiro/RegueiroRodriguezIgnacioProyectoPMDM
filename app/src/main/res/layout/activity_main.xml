@@ -52,7 +52,8 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/tiContraseña"
-        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        app:startIconDrawable="@drawable/cerrado"
         android:layout_width="@dimen/width_edittext_login"
         android:layout_height="54dp"
         android:layout_marginTop="32dp"

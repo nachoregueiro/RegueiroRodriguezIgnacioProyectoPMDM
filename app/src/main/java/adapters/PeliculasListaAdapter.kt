@@ -32,7 +32,7 @@ class PeliculasListaAdapter(val peliculas: List<Pelicula>,val miActivity:Activit
     override fun onBindViewHolder(holder: PeliculasViewHolder, position: Int) {
         //esto que muestre el número de elementos que va a aparecer
         val pelicula = peliculas.get(position)
-        holder.tvNombre.setText(pelicula.titulo)
+
         Picasso.get().load(pelicula.url).into(holder.ivFoto)
 
         holder.layoutItemPeliculas.setOnClickListener(){
@@ -46,7 +46,7 @@ class PeliculasListaAdapter(val peliculas: List<Pelicula>,val miActivity:Activit
 
 
     class PeliculasViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val tvNombre =itemView.findViewById<TextView>(R.id.tvPersonaje)
+
         val ivFoto =itemView.findViewById<ImageView>(R.id.iv_character)
         val layoutItemPeliculas=itemView.findViewById<ConstraintLayout>(R.id.layoutItemPeliculas)
     }

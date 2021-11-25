@@ -25,6 +25,7 @@
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:layout_width="0dp"
+        android:id="@+id/botónflotante"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|right"
         android:layout_margin="16dp"

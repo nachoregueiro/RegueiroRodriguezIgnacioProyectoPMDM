@@ -34,11 +34,16 @@ class detalle_Pelicula_Activity : AppCompatActivity() {
         tvNota.setText(""+pelicula1.nota)
         Picasso.get().load(pelicula1.url).into(ivFoto)
 
+
+
        // val toolbar = findViewById<View>(R.id.toolbar) as Toolbar // get the reference of Toolbar
 
         // setSupportActionBar(toolbar) // Setting/replace toolbar as the ActionBar
 
     }
 
+
     }
+
+
 

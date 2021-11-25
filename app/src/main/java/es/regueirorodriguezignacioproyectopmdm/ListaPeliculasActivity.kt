@@ -1,14 +1,12 @@
 package es.regueirorodriguezignacioproyectopmdm
 
-import Dao.PeliculasDao
 import Dao.PeliculasDaoMock
 import adapters.PeliculasListaAdapter
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.recyclerview.widget.LinearLayoutManager
-import entities.Pelicula
+import androidx.recyclerview.widget.GridLayoutManager
 import es.regueirorodriguezignacioproyectopmdm.databinding.ActivityListaPeliculasBinding
-import es.regueirorodriguezignacioproyectopmdm.databinding.ActivityMainBinding
 
 class ListaPeliculasActivity : AppCompatActivity() {
     private lateinit var binding: ActivityListaPeliculasBinding
@@ -24,13 +22,18 @@ class ListaPeliculasActivity : AppCompatActivity() {
         val listaPeliculas= peliculasDao.getTodos()
 
 
-        val layoutManager=LinearLayoutManager(this)
+        val layoutManager=GridLayoutManager(this,2)
         val adapter = PeliculasListaAdapter(listaPeliculas,this)
 
         binding.rvPeliculasList.adapter =adapter
         binding.rvPeliculasList.layoutManager =layoutManager
 
         setTitle("Lista de peliculas")
+
+        binding.botNflotante.setOnClickListener {
+            val intent = Intent(this, formulario_Pelicula::class.java)
+            startActivity(intent)
+        }
 
     }
 }

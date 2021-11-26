@@ -40,9 +40,7 @@ class PeliculasListaAdapter(val peliculas: List<Pelicula>,val miActivity:Activit
                 intent.putExtra("Pelicula",pelicula)
             holder.itemView.rootView.context.startActivity(intent)
         }
-
     }
-
 
 
     class PeliculasViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {

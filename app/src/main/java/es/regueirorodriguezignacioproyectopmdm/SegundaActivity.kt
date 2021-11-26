@@ -23,6 +23,8 @@ class SegundaActivity : AppCompatActivity() {
         setContentView(binding.root)
         btAtrás=findViewById(R.id.btAtrás)
 
+
+
         btAtrás.setOnClickListener{
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)

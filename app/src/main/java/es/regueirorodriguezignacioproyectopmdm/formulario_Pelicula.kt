@@ -6,12 +6,29 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
+import com.google.android.material.textfield.TextInputEditText
+import entities.Pelicula
+import es.regueirorodriguezignacioproyectopmdm.App.Companion.peliculas
 
 class formulario_Pelicula : AppCompatActivity() {
+
+    private lateinit var tveTitulo :TextInputEditText
+    private lateinit var tveGenero :TextInputEditText
+    private lateinit var tvDirector :TextInputEditText
+    private lateinit var tveAño :TextInputEditText
+    private lateinit var tveNota:TextInputEditText
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_formulario_pelicula)
     //formulario detalle peliculas
+
+       tveTitulo=findViewById(R.id.tveTitulo)
+        tveGenero=findViewById<TextInputEditText>(R.id.tveGénero)
+        tvDirector=findViewById<TextInputEditText>(R.id.tveDirector)
+        tveAño=findViewById<TextInputEditText>(R.id.tveAño)
+        tveNota=findViewById<TextInputEditText>(R.id.tveNota)
+
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -22,7 +39,14 @@ class formulario_Pelicula : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
             R.id.check -> {
-                Toast.makeText(this, "Personaje guardado correctamente.", Toast.LENGTH_SHORT).show()
+                val titulo=tveTitulo.text.toString()
+                val actor=tveGenero.text.toString()
+                val director=tvDirector.text.toString()
+                //falta castear a doubleval nota=tveNota.toString()
+                //falta añadir url val url=tve
+
+                peliculas.add(Pelicula(titulo,director,actor,nota,url))
+                Toast.makeText(this, "Pelicula añadida correctamente", Toast.LENGTH_SHORT).show()
                 finish()
                 true
             }

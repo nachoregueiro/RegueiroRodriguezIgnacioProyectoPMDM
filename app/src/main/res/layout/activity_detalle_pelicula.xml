@@ -8,7 +8,7 @@
     tools:context=".detalle_Pelicula_Activity">
 
     <TextView
-        android:id="@+id/tvTitulo"
+        android:id="@+id/tveTitulo"
         style="@style/Widget.MaterialComponents.TextView"
         android:layout_width="138dp"
         android:layout_height="33dp"
@@ -28,7 +28,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.439"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvTitulo"
+        app:layout_constraintTop_toBottomOf="@+id/tveTitulo"
         tools:ignore="MissingConstraints"
         tools:srcCompat="@tools:sample/avatars" />
 

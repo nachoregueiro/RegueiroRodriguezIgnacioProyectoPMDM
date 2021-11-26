@@ -11,10 +11,14 @@
         android:id="@+id/tiPelicula"
         android:layout_width="409dp"
         android:layout_height="wrap_content"
-        tools:layout_editor_absoluteX="1dp"
-        tools:layout_editor_absoluteY="81dp">
+        android:layout_marginTop="32dp"
+        app:layout_constraintBottom_toTopOf="@+id/tiGénero"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/tveTitulo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="introduce nombre de la película:" />
@@ -25,10 +29,12 @@
         android:layout_width="409dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="67dp"
-        app:layout_constraintTop_toBottomOf="@+id/tiPelicula"
-        tools:layout_editor_absoluteX="1dp">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tiPelicula">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/tveGénero"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="introduce género:" />
@@ -39,12 +45,13 @@
         android:layout_width="409dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="67dp"
-        app:layout_constraintTop_toBottomOf="@+id/tiGénero"
-        tools:layout_editor_absoluteX="1dp">
-
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tiGénero">
 
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/tveDirector"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Introduce nombre del director:" />
@@ -58,10 +65,45 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="63dp"
         android:hint="Introduce año de la pelicula:"
-        app:layout_constraintTop_toBottomOf="@+id/tiDirector"
-        tools:layout_editor_absoluteX="1dp">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tiDirector">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/tveAño"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tiNota"
+        android:layout_width="409dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="69dp"
+        android:hint="Introduce nota de la pelicula:"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tiAño">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/tveNota"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tiActor"
+        android:layout_width="409dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="50dp"
+        android:hint="Introduce nombre del actor:"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tiNota">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/tveActor"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
     </com.google.android.material.textfield.TextInputLayout>

@@ -4,13 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@android:color/system_neutral1_600"
     tools:context=".detalle_Pelicula_Activity">
 
     <TextView
         android:id="@+id/tvTitulo"
         style="@style/Widget.MaterialComponents.TextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="138dp"
+        android:layout_height="33dp"
         android:layout_marginTop="72dp"
         android:text="TextView"
         android:textColor="@color/primaryColor"
@@ -37,8 +38,9 @@
         android:layout_height="wrap_content"
         android:text="Director:"
         app:layout_constraintEnd_toStartOf="@+id/tvDirector"
+        app:layout_constraintHorizontal_bias="0.547"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="456dp" />
+        tools:layout_editor_absoluteY="461dp" />
 
     <TextView
         android:id="@+id/textView7"
@@ -46,18 +48,19 @@
         android:layout_height="wrap_content"
         android:text="Año:"
         app:layout_constraintEnd_toStartOf="@+id/tvNota"
+        app:layout_constraintHorizontal_bias="0.464"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="579dp" />
+        tools:layout_editor_absoluteY="557dp" />
 
     <TextView
         android:id="@+id/tvNota"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="44dp"
+        android:layout_marginTop="24dp"
         android:text="TextView"
         android:textColor="@android:color/holo_red_dark"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.56"
+        app:layout_constraintHorizontal_bias="0.538"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvActor" />
 
@@ -65,21 +68,20 @@
         android:id="@+id/tvDirector"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="364dp"
         android:text="TextView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.56"
+        app:layout_constraintHorizontal_bias="0.538"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvTitulo" />
+        tools:layout_editor_absoluteY="461dp" />
 
     <TextView
         android:id="@+id/tvActor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="32dp"
         android:text="TextView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.56"
+        app:layout_constraintHorizontal_bias="0.538"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvDirector" />
 
@@ -89,8 +91,9 @@
         android:layout_height="wrap_content"
         android:text="Género:"
         app:layout_constraintEnd_toStartOf="@+id/tvActor"
+        app:layout_constraintHorizontal_bias="0.56"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="515dp" />
+        tools:layout_editor_absoluteY="512dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

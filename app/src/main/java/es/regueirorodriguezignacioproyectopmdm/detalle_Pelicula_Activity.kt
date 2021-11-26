@@ -1,11 +1,14 @@
 package es.regueirorodriguezignacioproyectopmdm
 
+import android.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
+import android.view.MenuItem
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import android.widget.Toolbar
 import com.squareup.picasso.Picasso
 import entities.Pelicula
@@ -41,7 +44,28 @@ class detalle_Pelicula_Activity : AppCompatActivity() {
         // setSupportActionBar(toolbar) // Setting/replace toolbar as the ActionBar
 
     }
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            R.id.check -> {
+                Toast.makeText(this, "Personaje guardado correctamente.", Toast.LENGTH_SHORT).show()
+                finish()
+                true
+            }
+            R.id.papelera -> {
+                val builder = AlertDialog.Builder(this)
+                builder.setTitle("Eliminar personaje")
+                    .setMessage("La película seleccionada va a ser eliminada, ¿está seguro?")
+                    .setPositiveButton("Aceptar") { _, _ ->
+                        Toast.makeText(this, "Personaje eliminado.", Toast.LENGTH_SHORT).show()
+                        finish()
+                    }.setNegativeButton("Cancelar", null)
+                    .show()
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
 
+    }
 
     }
 

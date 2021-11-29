@@ -10,7 +10,6 @@ import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 import es.regueirorodriguezignacioproyectopmdm.databinding.ActivityRegistroBinding
-import es.regueirorodriguezignacioproyectopmdm.databinding.ActivitySegundaBinding
 import java.util.regex.Pattern
 
 class RegistroActivity : AppCompatActivity() {

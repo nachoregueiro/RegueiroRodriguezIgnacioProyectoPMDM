@@ -1,13 +1,11 @@
 package es.regueirorodriguezignacioproyectopmdm
 
-import android.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.ImageView
 import android.widget.TextView
-import android.widget.Toast
 import com.squareup.picasso.Picasso
 import entities.Pelicula
 import es.regueirorodriguezignacioproyectopmdm.App.Companion.peliculas
@@ -27,7 +25,7 @@ class detalle_Pelicula_Activity : AppCompatActivity() {
         //declaración elementos
         val tvTitulo = findViewById<TextView>(R.id.tveTitulo)
         val tvDirector = findViewById<TextView>(R.id.tvDirector)
-        val tvActor = findViewById<TextView>(R.id.tvActor)
+        val tvActor = findViewById<TextView>(R.id.tveActor)
         val tvNota = findViewById<TextView>(R.id.tvNota)
         val ivFoto = findViewById<ImageView>(R.id.ivFoto)
 

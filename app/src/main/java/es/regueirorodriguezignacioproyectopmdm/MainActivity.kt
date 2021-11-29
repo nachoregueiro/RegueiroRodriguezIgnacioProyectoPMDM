@@ -3,9 +3,7 @@ package es.regueirorodriguezignacioproyectopmdm
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
 import es.regueirorodriguezignacioproyectopmdm.databinding.ActivityMainBinding
-import es.regueirorodriguezignacioproyectopmdm.databinding.ActivitySegundaBinding
 
 
 class MainActivity : AppCompatActivity() {
@@ -23,7 +21,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.btRegistro.setOnClickListener {
-            val intent = Intent(this, SegundaActivity::class.java)
+            val intent = Intent(this, RegistroActivity::class.java)
             startActivity(intent)
         }
 

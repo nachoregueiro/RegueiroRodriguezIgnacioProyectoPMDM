@@ -11,8 +11,7 @@
         android:id="@+id/tiPelicula"
         android:layout_width="409dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        app:layout_constraintBottom_toTopOf="@+id/tiGénero"
+        android:layout_marginTop="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -21,14 +20,14 @@
             android:id="@+id/tveTitulo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="introduce nombre de la película:" />
+            android:hint="Introduce nombre de la película:" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/tiGénero"
         android:layout_width="409dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="67dp"
+        android:layout_marginTop="50dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tiPelicula">
@@ -37,14 +36,14 @@
             android:id="@+id/tveGénero"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="introduce género:" />
+            android:hint="Introduce género:" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/tiDirector"
         android:layout_width="409dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="67dp"
+        android:layout_marginTop="50dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tiGénero">
@@ -63,7 +62,7 @@
         android:id="@+id/tiAño"
         android:layout_width="409dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="63dp"
+        android:layout_marginTop="40dp"
         android:hint="Introduce año de la pelicula:"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -79,7 +78,7 @@
         android:id="@+id/tiNota"
         android:layout_width="409dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="69dp"
+        android:layout_marginTop="60dp"
         android:hint="Introduce nota de la pelicula:"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tiAño">
@@ -94,11 +93,10 @@
         android:id="@+id/tiActor"
         android:layout_width="409dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="50dp"
+        android:layout_marginTop="50dp"
         android:hint="Introduce nombre del actor:"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tiNota">
 

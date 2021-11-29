@@ -23,7 +23,7 @@
             android:exported="true"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".SegundaActivity"
+            android:name=".RegistroActivity"
             android:exported="true" />
         <activity
             android:name=".MainActivity"

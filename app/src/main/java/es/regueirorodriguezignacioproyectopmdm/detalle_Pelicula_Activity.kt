@@ -40,10 +40,6 @@ class detalle_Pelicula_Activity : AppCompatActivity() {
         Picasso.get().load(pelicula1.url).into(ivFoto)
 
 
-        // val toolbar = findViewById<View>(R.id.toolbar) as Toolbar // get the reference of Toolbar
-
-        // setSupportActionBar(toolbar) // Setting/replace toolbar as the ActionBar
-
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {

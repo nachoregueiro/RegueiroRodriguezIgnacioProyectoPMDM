@@ -32,7 +32,7 @@ class ListaPeliculasActivity : AppCompatActivity() {
 
         setTitle("Lista de peliculas")
 
-        binding.botNflotante.setOnClickListener {
+        binding.botNFlotante.setOnClickListener {
             val intent = Intent(this, formulario_Pelicula::class.java)
             startActivity(intent)
         }

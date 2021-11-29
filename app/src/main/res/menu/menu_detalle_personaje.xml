@@ -10,10 +10,18 @@
         android:title="Check"/>
 
     <item
+        android:id="@+id/editar"
+        android:orderInCategory="100"
+        app:showAsAction="always"
+        android:icon="@drawable/editar"
+        android:title="papelera"/>
+
+    <item
         android:id="@+id/papelera"
         android:orderInCategory="100"
         app:showAsAction="always"
         android:icon="@drawable/papelera"
         android:title="papelera"/>
+
 
 </menu>

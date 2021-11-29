@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SegundaActivity">
+    tools:context=".RegistroActivity">
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/tiNombre"
@@ -17,7 +17,7 @@
         app:layout_constraintBottom_toTopOf="@+id/tiApellido"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2">
+        app:layout_constraintTop_toBottomOf="@+id/tvLogo">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/etNombre"
@@ -28,7 +28,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/tvLogo"
         android:layout_width="183dp"
         android:layout_height="38dp"
         android:layout_marginTop="32dp"
@@ -78,21 +78,22 @@
             android:id="@+id/etApellido"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:hint="introduce tu apellido:"
+            android:hint="Introduce tu apellido:"
             tools:ignore="TouchTargetSizeCheck" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/tiEmail"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="241dp"
         android:layout_height="52dp"
+        android:layout_marginStart="5dp"
         android:layout_marginTop="20dp"
-        android:hint="introduce email:"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        app:startIconDrawable="@drawable/mail"
+        android:hint="Introduce email:"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tiApellido">
+        app:layout_constraintTop_toBottomOf="@+id/tiApellido"
+        app:startIconDrawable="@drawable/mail">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/etEmail"
@@ -103,17 +104,17 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/tiContraseña"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="233dp"
         android:layout_height="58dp"
         android:layout_marginTop="20dp"
-        app:startIconDrawable="@drawable/cerrado"
-        android:hint="introduce tu contraseña:"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-
+        android:hint="Introduce tu contraseña:"
         app:layout_constraintBottom_toTopOf="@+id/tiRepiteContraseña"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tiEmail">
+        app:layout_constraintTop_toBottomOf="@+id/tiEmail"
+        app:startIconDrawable="@drawable/cerrado">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/etContraseña"
@@ -123,15 +124,16 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/tiRepiteContraseña"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="229dp"
         android:layout_height="55dp"
         android:layout_marginTop="20dp"
-        android:hint="repite tu contraseña:"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        app:startIconDrawable="@drawable/ojos2"
+        android:layout_marginEnd="6dp"
+        android:hint="Repite tu contraseña:"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tiContraseña">
+        app:layout_constraintTop_toBottomOf="@+id/tiContraseña"
+        app:startIconDrawable="@drawable/ojos2">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/etRepiteContraseña"

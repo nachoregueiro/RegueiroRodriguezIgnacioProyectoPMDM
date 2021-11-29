@@ -17,6 +17,7 @@ class formulario_Pelicula : AppCompatActivity() {
     private lateinit var tvDirector :TextInputEditText
     private lateinit var tveAño :TextInputEditText
     private lateinit var tveNota:TextInputEditText
+    private lateinit var tveUrl:TextInputEditText
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,6 +29,7 @@ class formulario_Pelicula : AppCompatActivity() {
         tvDirector=findViewById<TextInputEditText>(R.id.tveDirector)
         tveAño=findViewById<TextInputEditText>(R.id.tveAño)
         tveNota=findViewById<TextInputEditText>(R.id.tveNota)
+        tveUrl=findViewById<TextInputEditText>(R.id.tveNota)
 
     }
 
@@ -42,10 +44,10 @@ class formulario_Pelicula : AppCompatActivity() {
                 val titulo=tveTitulo.text.toString()
                 val actor=tveGenero.text.toString()
                 val director=tvDirector.text.toString()
-                //falta castear a doubleval nota=tveNota.toString()
-                //falta añadir url val url=tve
+               // val nota=tveNota.setText()
+               // val url=tveUrl.setImage
 
-                peliculas.add(Pelicula(titulo,director,actor,nota,url))
+           //     peliculas.add(Pelicula(titulo,director,actor,nota,url))
                 Toast.makeText(this, "Pelicula añadida correctamente", Toast.LENGTH_SHORT).show()
                 finish()
                 true

@@ -37,10 +37,10 @@
         android:layout_width="@dimen/width_edittext_login"
         android:layout_height="59dp"
         android:layout_marginTop="20dp"
-        app:startIconDrawable="@drawable/verificar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView">
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:startIconDrawable="@drawable/verificar">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/etNombre"
@@ -53,15 +53,16 @@
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/tiContraseña"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        app:startIconDrawable="@drawable/cerrado"
         android:layout_width="@dimen/width_edittext_login"
         android:layout_height="54dp"
+        android:layout_marginStart="10dp"
         android:layout_marginTop="32dp"
         android:layout_marginEnd="10dp"
         app:boxBackgroundColor="@android:color/transparent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tiNombre">
+        app:layout_constraintTop_toBottomOf="@+id/tiNombre"
+        app:startIconDrawable="@drawable/cerrado">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/etContraseña"

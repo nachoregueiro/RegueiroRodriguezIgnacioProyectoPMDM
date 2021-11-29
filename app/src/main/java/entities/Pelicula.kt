@@ -6,7 +6,7 @@ data class Pelicula(
     var titulo:String,
     var director:String,
     var actor:String,
-    var nota: Double,
+    var nota: String,
     var url:String
 )
     :Serializable

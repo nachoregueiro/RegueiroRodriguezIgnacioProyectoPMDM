@@ -1,19 +1,17 @@
 package adapters
 
 import android.app.Activity
-import android.content.Context
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
-import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
 import entities.Pelicula
 import es.regueirorodriguezignacioproyectopmdm.R
-import es.regueirorodriguezignacioproyectopmdm.detalle_Pelicula_Activity
+import es.regueirorodriguezignacioproyectopmdm.Detalle_Pelicula_Activity
 
 class PeliculasListaAdapter(val peliculas: List<Pelicula>,val miActivity:Activity) : RecyclerView.Adapter<PeliculasListaAdapter.PeliculasViewHolder>() {
     // Este método se ocupa de INFLAR la vista (el item_pelicula.xml)
@@ -36,7 +34,7 @@ class PeliculasListaAdapter(val peliculas: List<Pelicula>,val miActivity:Activit
         Picasso.get().load(pelicula.url).into(holder.ivFoto)
 
         holder.layoutItemPeliculas.setOnClickListener(){
-            val intent= Intent(holder.itemView.rootView.context,detalle_Pelicula_Activity::class.java)
+            val intent= Intent(holder.itemView.rootView.context,Detalle_Pelicula_Activity::class.java)
                 intent.putExtra("Pelicula",pelicula)
             holder.itemView.rootView.context.startActivity(intent)
         }

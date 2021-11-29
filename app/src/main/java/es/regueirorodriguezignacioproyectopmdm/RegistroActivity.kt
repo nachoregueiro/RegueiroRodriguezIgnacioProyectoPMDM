@@ -34,25 +34,14 @@ class RegistroActivity : AppCompatActivity() {
         val etEmail=findViewById<TextView>(R.id.etEmail)
 
         binding.btGuardarDatos.setOnClickListener{
-         /*   if(binding.tiNombre.text.toString().trim() == "" || binding.tiApellido.text.toString().trim=""
-                || binding.tiEmail.text.toString().trim="" || binding.tiContraseA.text.toString().trim=""
-                || binding.tiRepiteContraseA.text.toString().trim=""){
-                Toast.makeText(this,"Completa los campos",Toast.LENGTH_SHORT).show()
-            }
-            else if (pattern.matcher(binding.tiEmail.text.toString().trim().matches()==false)){
-                Toast.makeText(this,"Email no válido",Toast.LENGTH_SHORT).show()
-            }
-            else if (binding.tiContraseA.text.toString().trim().length()>8 || binding.tiContraseA.text.toString().trim()< 5){
-                Toast.makeText(this,"La contraseña debe tener entre 5 y 8 caracteres",Toast.LENGTH_SHORT).show()
-            }
-            else{
+
             val sharedPrefs = getSharedPreferences(
             "moviespreference", Context.MODE_PRIVATE)
             var editor=sharedPrefs.edit()
             editor.putString("email",etEmail.text.toString())
             val intent=Intent(this,ListaPeliculasActivity::class.java)
             startActivity(intent)
-        }*/
+        }
         }
 
 
@@ -60,8 +49,6 @@ class RegistroActivity : AppCompatActivity() {
     private fun validarEmail(email: String): Boolean { //Metodo que comprueba si el email es correcto
         val pattern: Pattern = Patterns.EMAIL_ADDRESS
         return pattern.matcher(email).matches()
-    }
-//Metodo que comprueba si el email es correcto y las contraseñas son validas y coinciden
     }
 
 

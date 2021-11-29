@@ -13,10 +13,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.RegueiroRodriguezIgnacioProyectoPMDM">
         <activity
-            android:name=".formulario_Pelicula"
+            android:name=".Formulario_Pelicula"
             android:exported="false" />
         <activity
-            android:name=".detalle_Pelicula_Activity"
+            android:name=".Detalle_Pelicula_Activity"
             android:exported="true" />
         <activity
             android:name=".ListaPeliculasActivity"

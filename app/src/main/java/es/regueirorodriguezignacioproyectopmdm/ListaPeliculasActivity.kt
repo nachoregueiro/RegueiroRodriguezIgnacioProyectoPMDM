@@ -1,6 +1,5 @@
 package es.regueirorodriguezignacioproyectopmdm
 
-import Dao.PeliculasDaoMock
 import adapters.PeliculasListaAdapter
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -20,8 +19,6 @@ class ListaPeliculasActivity : AppCompatActivity() {
         binding = ActivityListaPeliculasBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-//        val peliculasDao =PeliculasDaoMock()
-//        val listaPeliculas= peliculasDao.getTodos()
 
 
         val layoutManager=GridLayoutManager(this,2)
@@ -33,7 +30,7 @@ class ListaPeliculasActivity : AppCompatActivity() {
         setTitle("Lista de peliculas")
 
         binding.botNFlotante.setOnClickListener {
-            val intent = Intent(this, formulario_Pelicula::class.java)
+            val intent = Intent(this, Formulario_Pelicula::class.java)
             startActivity(intent)
         }
 

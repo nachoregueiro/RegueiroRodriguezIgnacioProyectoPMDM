@@ -10,7 +10,7 @@ import com.squareup.picasso.Picasso
 import entities.Pelicula
 import es.regueirorodriguezignacioproyectopmdm.App.Companion.peliculas
 
-class detalle_Pelicula_Activity : AppCompatActivity() {
+class Detalle_Pelicula_Activity : AppCompatActivity() {
 
     private lateinit var pelicula1: Pelicula
 

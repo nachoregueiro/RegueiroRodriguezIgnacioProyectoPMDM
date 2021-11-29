@@ -10,7 +10,7 @@ import com.google.android.material.textfield.TextInputEditText
 import entities.Pelicula
 import es.regueirorodriguezignacioproyectopmdm.App.Companion.peliculas
 
-class formulario_Pelicula : AppCompatActivity() {
+class Formulario_Pelicula : AppCompatActivity() {
 
     private lateinit var tveTitulo :TextInputEditText
     private lateinit var tveGenero :TextInputEditText
@@ -44,10 +44,11 @@ class formulario_Pelicula : AppCompatActivity() {
                 val titulo=tveTitulo.text.toString()
                 val actor=tveGenero.text.toString()
                 val director=tvDirector.text.toString()
-               // val nota=tveNota.setText()
-               // val url=tveUrl.setImage
+                val nota=tveNota.text.toString()
+                val url=tveUrl.text.toString()
 
-           //     peliculas.add(Pelicula(titulo,director,actor,nota,url))
+
+                peliculas.add(Pelicula(titulo,director,actor,nota,url))
                 Toast.makeText(this, "Pelicula añadida correctamente", Toast.LENGTH_SHORT).show()
                 finish()
                 true

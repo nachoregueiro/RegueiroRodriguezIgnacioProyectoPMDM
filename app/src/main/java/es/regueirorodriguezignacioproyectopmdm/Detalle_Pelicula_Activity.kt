@@ -37,7 +37,6 @@ class Detalle_Pelicula_Activity : AppCompatActivity() {
         tvNota.setText("" + pelicula1.nota)
         Picasso.get().load(pelicula1.url).into(ivFoto)
 
-
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {

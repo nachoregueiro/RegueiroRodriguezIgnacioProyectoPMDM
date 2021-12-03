@@ -14,7 +14,7 @@ import es.regueirorodriguezignacioproyectopmdm.R
 import es.regueirorodriguezignacioproyectopmdm.Detalle_Pelicula_Activity
 
 class PeliculasListaAdapter(val peliculas: List<Pelicula>,val miActivity:Activity) : RecyclerView.Adapter<PeliculasListaAdapter.PeliculasViewHolder>() {
-    // Este método se ocupa de INFLAR la vista (el item_pelicula.xml)
+         //Este método se ocupa de INFLAR la vista (el item_pelicula.xml)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PeliculasViewHolder {
         val inflater =
@@ -22,16 +22,16 @@ class PeliculasListaAdapter(val peliculas: List<Pelicula>,val miActivity:Activit
         return PeliculasViewHolder(inflater)
     }
 
-    override fun getItemCount(): Int {
-        return peliculas.size
-    }
+        override fun getItemCount(): Int {
+          return peliculas.size
+        }
 
-    //este método sirve para permitir pasar los datos al Activity
+             //Este método sirve para permitir pasar los datos al Activity
     override fun onBindViewHolder(holder: PeliculasViewHolder, position: Int) {
-        //esto que muestre el número de elementos que va a aparecer
-        val pelicula = peliculas.get(position)
+            //Muestra el número de elementos que van a aparecer
+            val pelicula = peliculas.get(position)
 
-        Picasso.get().load(pelicula.url).into(holder.ivFoto)
+            Picasso.get().load(pelicula.url).into(holder.ivFoto)
 
         holder.layoutItemPeliculas.setOnClickListener(){
             val intent= Intent(holder.itemView.rootView.context,Detalle_Pelicula_Activity::class.java)

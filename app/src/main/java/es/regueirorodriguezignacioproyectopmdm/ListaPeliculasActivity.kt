@@ -36,8 +36,14 @@ class ListaPeliculasActivity : AppCompatActivity() {
 
     }
 
+
     override fun onResume() {
         super.onResume()
         adapter!!.notifyDataSetChanged()
+    }
+
+    @Override
+    override fun onBackPressed() {
+        if (true){}
     }
 }

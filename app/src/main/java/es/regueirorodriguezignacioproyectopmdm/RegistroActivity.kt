@@ -23,29 +23,32 @@ class RegistroActivity : AppCompatActivity() {
         setContentView(binding.root)
         btAtrás=findViewById(R.id.btAtrás)
         setTitle("Registro")
-
-
-        btAtrás.setOnClickListener{
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
-        }
-
         val btGuardarDatos=findViewById<TextView>(R.id.etEmail)
         val etEmail=findViewById<TextView>(R.id.etEmail)
 
         binding.btGuardarDatos.setOnClickListener{
+            guardarDatos()
+            onBackPressed()
+        }
 
-            val sharedPrefs = getSharedPreferences(
-            "moviespreference", Context.MODE_PRIVATE)
-            var editor=sharedPrefs.edit()
-            editor.putString("email",etEmail.text.toString())
-            val intent=Intent(this,ListaPeliculasActivity::class.java)
-            startActivity(intent)
+
         }
-        }
+    fun guardarDatos(){
+        val nombreR = binding.etNombre.text.toString()
+        val contraseñaR = binding.etContraseA.text.toString()
+        val sharedPreferences = getSharedPreferences("sharedPrefs",Context.MODE_PRIVATE)
+        val editor = sharedPreferences.edit()
+        editor.apply(){
+            putString("NOMBRER",nombreR)
+            putString("CONTRASEÑAR",contraseñaR)
+        }.apply()
+        Toast.makeText(this,"Registrado",Toast.LENGTH_SHORT).show()
+    }
 
 
     }
+
+
     private fun validarEmail(email: String): Boolean { //Metodo que comprueba si el email es correcto
         val pattern: Pattern = Patterns.EMAIL_ADDRESS
         return pattern.matcher(email).matches()

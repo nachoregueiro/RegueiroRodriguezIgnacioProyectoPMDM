@@ -2,6 +2,12 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
+    <item android:id="@+id/telefono"
+        android:orderInCategory="100"
+        app:showAsAction="always"
+        android:icon="@drawable/telefono"
+        android:title="telefono"/>
+
     <item
         android:id="@+id/editar"
         android:orderInCategory="100"
@@ -15,4 +21,5 @@
         app:showAsAction="always"
         android:icon="@drawable/papelera"
         android:title="papelera"/>
+
 </menu>

@@ -1,6 +1,8 @@
 package es.regueirorodriguezignacioproyectopmdm
 
 import android.app.AlertDialog
+import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
@@ -22,8 +24,8 @@ class Formulario_Pelicula : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_formulario_pelicula)
-    //formulario detalle peliculas
 
+      //formulario detalle peliculas
        tveTitulo=findViewById(R.id.tveTitulo)
         tveGenero=findViewById<TextInputEditText>(R.id.tveGénero)
         tvDirector=findViewById<TextInputEditText>(R.id.tveDirector)
@@ -41,18 +43,29 @@ class Formulario_Pelicula : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
             R.id.check -> {
-                val titulo=tveTitulo.text.toString()
-                val actor=tveGenero.text.toString()
-                val director=tvDirector.text.toString()
-                val nota=tveNota.text.toString()
-                val url=tveUrl.text.toString()
+                val titulo = tveTitulo.text.toString()
+                val actor = tveGenero.text.toString()
+                val director = tvDirector.text.toString()
+                val nota = tveNota.toString()
+                val url = tveUrl.text.toString()
 
 
-                peliculas.add(Pelicula(titulo,director,actor,nota,url))
+                peliculas.add(Pelicula(titulo, director, actor, nota, url))
                 Toast.makeText(this, "Pelicula añadida correctamente", Toast.LENGTH_SHORT).show()
                 finish()
                 true
             }
+            R.id.telefono -> {
+
+                val telefono = "tel:694573459"
+                startActivity(Intent(Intent.ACTION_DIAL, Uri.parse(telefono)))
+                true
+
+
+            }
+
+
+
             R.id.papelera -> {
                 val builder = AlertDialog.Builder(this)
                 builder.setTitle("Eliminar personaje")
@@ -65,6 +78,11 @@ class Formulario_Pelicula : AppCompatActivity() {
                 true
             }
             else -> super.onOptionsItemSelected(item)
+
+
         }
-}
+
+        }
+
+
 }

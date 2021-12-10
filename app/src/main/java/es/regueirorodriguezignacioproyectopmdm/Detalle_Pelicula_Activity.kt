@@ -45,8 +45,17 @@ class Detalle_Pelicula_Activity : AppCompatActivity() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        peliculas.remove(pelicula1)
-        finish()
+        if(item.itemId == R.id.borrar){
+            peliculas.remove(pelicula1)
+            finish()
+        }
+        else if(item.itemId==R.id.editar){
+            // Iniciar activity de edicion
+        }
+        else if(item.itemId == R.id.llamar){
+            // Intent que abra la app de llamadas (intent explicito). La accion es ACTION_DIAL.
+        }
+
         return super.onOptionsItemSelected(item)
     }
 

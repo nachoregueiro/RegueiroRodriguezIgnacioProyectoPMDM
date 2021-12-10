@@ -2,7 +2,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <item android:id="@+id/telefono"
+    <item android:id="@+id/llamar"
         android:orderInCategory="100"
         app:showAsAction="always"
         android:icon="@drawable/telefono"
@@ -16,7 +16,7 @@
         android:title="editar"/>
 
     <item
-        android:id="@+id/papelera"
+        android:id="@+id/borrar"
         android:orderInCategory="100"
         app:showAsAction="always"
         android:icon="@drawable/papelera"

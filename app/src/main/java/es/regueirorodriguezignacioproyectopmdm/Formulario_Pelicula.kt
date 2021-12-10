@@ -48,25 +48,17 @@ class Formulario_Pelicula : AppCompatActivity() {
                 val director = tvDirector.text.toString()
                 val nota = tveNota.toString()
                 val url = tveUrl.text.toString()
-
-
                 peliculas.add(Pelicula(titulo, director, actor, nota, url))
                 Toast.makeText(this, "Pelicula añadida correctamente", Toast.LENGTH_SHORT).show()
                 finish()
                 true
             }
-            R.id.telefono -> {
-
+            R.id.llamar -> {
                 val telefono = "tel:694573459"
                 startActivity(Intent(Intent.ACTION_DIAL, Uri.parse(telefono)))
                 true
-
-
             }
-
-
-
-            R.id.papelera -> {
+            R.id.borrar -> {
                 val builder = AlertDialog.Builder(this)
                 builder.setTitle("Eliminar personaje")
                     .setMessage("La película seleccionada va a ser eliminada, ¿está seguro?")
@@ -78,10 +70,7 @@ class Formulario_Pelicula : AppCompatActivity() {
                 true
             }
             else -> super.onOptionsItemSelected(item)
-
-
         }
-
         }
 
 

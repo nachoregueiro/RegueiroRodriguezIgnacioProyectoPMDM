@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import com.squareup.picasso.Picasso
@@ -15,6 +16,7 @@ import es.regueirorodriguezignacioproyectopmdm.App.Companion.peliculas
 class Detalle_Pelicula_Activity : AppCompatActivity() {
 
     private lateinit var pelicula1: Pelicula
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,7 +32,7 @@ class Detalle_Pelicula_Activity : AppCompatActivity() {
         val tvActor = findViewById<TextView>(R.id.tveActor)
         val tvNota = findViewById<TextView>(R.id.tvNota)
         val ivFoto = findViewById<ImageView>(R.id.ivFoto)
-
+        val btllamar = findViewById<Button>(R.id.btLlamar)
 
         //visualización elementos
         tvTitulo.setText(pelicula1.titulo)
@@ -38,6 +40,14 @@ class Detalle_Pelicula_Activity : AppCompatActivity() {
         tvActor.setText(pelicula1.actor)
         tvNota.setText( pelicula1.nota)
         Picasso.get().load(pelicula1.url).into(ivFoto)
+
+
+
+        btllamar.setOnClickListener(){
+              val telefono="tel:12345678"
+          startActivity(Intent(Intent.ACTION_DIAL, Uri.parse(telefono)))
+
+        }
     }
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.menu_borrar, menu)
@@ -50,18 +60,12 @@ class Detalle_Pelicula_Activity : AppCompatActivity() {
             finish()
         }
         else if(item.itemId==R.id.editar){
-            // Iniciar activity de edicion
+            // Iniciar activity de edición
             val intent = Intent(this, Formulario_Pelicula::class.java)
+            intent.putExtra("Pelicula",pelicula1)
             startActivity(intent)
         }
-        else if(item.itemId == R.id.llamar){
-            // Intent que abra la app de llamadas (intent explicito). La accion es ACTION_DIAL.
-            /*    val telefono="123123123"
-            startActivity(Intent(Intent.ACTION_DIAL, Uri.parse(telefono)))
-            */
-                /*Falta aqui para */
-            val intent = Intent(Intent.ACTION_SEND)
-        }
+
 
         return super.onOptionsItemSelected(item)
     }

@@ -23,8 +23,8 @@ class ListaPeliculasActivity : AppCompatActivity() {
 
         val layoutManager=GridLayoutManager(this,2)
         adapter = PeliculasListaAdapter(peliculas,this)
-
         binding.rvPeliculasList.adapter =adapter
+
         binding.rvPeliculasList.layoutManager =layoutManager
 
         setTitle("Lista de peliculas")
@@ -39,6 +39,7 @@ class ListaPeliculasActivity : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
+        val size = peliculas.size
         adapter!!.notifyDataSetChanged()
     }
 

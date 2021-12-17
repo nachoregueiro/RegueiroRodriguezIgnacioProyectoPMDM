@@ -27,7 +27,7 @@
         android:id="@+id/tiGénero"
         android:layout_width="409dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="30dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tiPelicula">
@@ -43,7 +43,7 @@
         android:id="@+id/tiDirector"
         android:layout_width="409dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="30dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tiGénero">
@@ -62,7 +62,7 @@
         android:id="@+id/tiAño"
         android:layout_width="409dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="30dp"
         android:hint="Introduce año de la pelicula:"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -78,7 +78,7 @@
         android:id="@+id/tiNota"
         android:layout_width="409dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="30dp"
         android:hint="Introduce nota de la pelicula:"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tiAño">
@@ -93,7 +93,7 @@
         android:id="@+id/tiActor"
         android:layout_width="409dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="30dp"
         android:hint="Introduce nombre del actor:"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -104,6 +104,22 @@
             android:id="@+id/tveActor"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tiUrl"
+        android:layout_width="409dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tiActor">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/tveUrl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Introduce url:" />
     </com.google.android.material.textfield.TextInputLayout>
 
 

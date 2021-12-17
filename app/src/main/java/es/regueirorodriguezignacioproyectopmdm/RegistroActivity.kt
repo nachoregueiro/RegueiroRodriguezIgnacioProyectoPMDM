@@ -27,13 +27,12 @@ class RegistroActivity : AppCompatActivity() {
         val etEmail=findViewById<TextView>(R.id.etEmail)
 
         binding.btGuardarDatos.setOnClickListener{
-            guardarDatos()
             onBackPressed()
         }
 
 
         }
-    fun guardarDatos(){
+   /* fun guardarDatos(){
         val nombreR = binding.etNombre.text.toString()
         val contraseñaR = binding.etContraseA.text.toString()
         val sharedPreferences = getSharedPreferences("sharedPrefs",Context.MODE_PRIVATE)
@@ -43,14 +42,10 @@ class RegistroActivity : AppCompatActivity() {
             putString("CONTRASEÑAR",contraseñaR)
         }.apply()
         Toast.makeText(this,"Registrado",Toast.LENGTH_SHORT).show()
-    }
+    }*/
 
     }
 
 
-    private fun validarEmail(email: String): Boolean { //Metodo que comprueba si el email es correcto
-        val pattern: Pattern = Patterns.EMAIL_ADDRESS
-        return pattern.matcher(email).matches()
-    }
 
 

@@ -21,6 +21,8 @@ class Formulario_Pelicula : AppCompatActivity() {
     private lateinit var tveNota:TextInputEditText
     private lateinit var tveUrl:TextInputEditText
 
+    private lateinit var pelicula1: Pelicula
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_formulario_pelicula)
@@ -31,7 +33,7 @@ class Formulario_Pelicula : AppCompatActivity() {
         tvDirector=findViewById<TextInputEditText>(R.id.tveDirector)
         tveAño=findViewById<TextInputEditText>(R.id.tveAño)
         tveNota=findViewById<TextInputEditText>(R.id.tveNota)
-        tveUrl=findViewById<TextInputEditText>(R.id.tveNota)
+        tveUrl=findViewById<TextInputEditText>(R.id.tveUrl)
 
     }
 
@@ -46,9 +48,9 @@ class Formulario_Pelicula : AppCompatActivity() {
                 val titulo = tveTitulo.text.toString()
                 val actor = tveGenero.text.toString()
                 val director = tvDirector.text.toString()
-                val nota = tveNota.toString()
+                val nota = tveNota.text.toString()
                 //el problema era de imagen Como una imagen aqui que no está por defecto es decir la ruta?
-                val url ="https://th.bing.com/th/id/R.bc95fe0c2834ee72d60e07fbfe360035?rik=pcp34PuCdaZwRg&pid=ImgRaw&r=0"
+                val url = tveUrl.text.toString()
                 peliculas.add(Pelicula(titulo, director, actor, nota, url))
                 Toast.makeText(this, "Pelicula añadida correctamente", Toast.LENGTH_SHORT).show()
                 finish()
@@ -67,6 +69,14 @@ class Formulario_Pelicula : AppCompatActivity() {
                 tveAño.isEnabled=true
                 tveNota.isEnabled=true
                 tveUrl.isEnabled=true
+
+                pelicula1 = intent.extras?.get("Pelicula") as Pelicula
+
+                tveTitulo.setText(pelicula1.titulo)
+               tveNota.setText(pelicula1.nota)
+                tvDirector.setText(pelicula1.director)
+                tveUrl.setText(pelicula1.url)
+
                 return true
             }
 

@@ -8,7 +8,7 @@ class PeliculasDaoMock : PeliculasDao {
     override fun getTodos(): ArrayList<Pelicula> {
         val lista = ArrayList<Pelicula>()
         lista.addAll(
-            listOf(
+            mutableListOf(
                 Pelicula(
                     "Interstellar",
                     "Cristopher Nolan",

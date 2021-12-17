@@ -31,10 +31,7 @@ class MainActivity : AppCompatActivity() {
                 putString("NOMBREL",nombreL)
                 putString("CONTRASEÑAL",contraseñaL)
                             }.apply()
-
             loadData()
-
-
         }
 
         binding.btRegistro.setOnClickListener {

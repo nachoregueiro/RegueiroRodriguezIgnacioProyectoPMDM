@@ -45,7 +45,6 @@ class RegistroActivity : AppCompatActivity() {
         Toast.makeText(this,"Registrado",Toast.LENGTH_SHORT).show()
     }
 
-
     }
 
 

@@ -7,6 +7,4 @@ interface PeliculasDao  {
     fun getTodos(): List<Pelicula>
 
 
-
-
 }

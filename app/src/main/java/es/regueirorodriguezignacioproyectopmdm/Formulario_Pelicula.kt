@@ -25,7 +25,7 @@ class Formulario_Pelicula : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_formulario_pelicula)
 
-      //formulario detalle peliculas
+        //formulario detalle peliculas
        tveTitulo=findViewById(R.id.tveTitulo)
         tveGenero=findViewById<TextInputEditText>(R.id.tveGénero)
         tvDirector=findViewById<TextInputEditText>(R.id.tveDirector)
@@ -47,31 +47,44 @@ class Formulario_Pelicula : AppCompatActivity() {
                 val actor = tveGenero.text.toString()
                 val director = tvDirector.text.toString()
                 val nota = tveNota.toString()
-                val url = tveUrl.text.toString()
+                //el problema era de imagen Como una imagen aqui que no está por defecto es decir la ruta?
+                val url ="https://th.bing.com/th/id/R.bc95fe0c2834ee72d60e07fbfe360035?rik=pcp34PuCdaZwRg&pid=ImgRaw&r=0"
                 peliculas.add(Pelicula(titulo, director, actor, nota, url))
                 Toast.makeText(this, "Pelicula añadida correctamente", Toast.LENGTH_SHORT).show()
                 finish()
-                true
+                return true
             }
             R.id.llamar -> {
                 val telefono = "tel:694573459"
                 startActivity(Intent(Intent.ACTION_DIAL, Uri.parse(telefono)))
                 true
             }
+            //para editar
+            R.id.editar -> {
+                tveTitulo.isEnabled=true
+                tveGenero.isEnabled=true
+                tvDirector.isEnabled=true
+                tveAño.isEnabled=true
+                tveNota.isEnabled=true
+                tveUrl.isEnabled=true
+                return true
+            }
+
             R.id.borrar -> {
                 val builder = AlertDialog.Builder(this)
                 builder.setTitle("Eliminar personaje")
                     .setMessage("La película seleccionada va a ser eliminada, ¿está seguro?")
-                    .setPositiveButton("Aceptar") { _, _ ->
+                    .setPositiveButton("Aceptar") {_, _ ->
                         Toast.makeText(this, "Personaje eliminado.", Toast.LENGTH_SHORT).show()
                         finish()
                     }.setNegativeButton("Cancelar", null)
                     .show()
-                true
+                return true
             }
             else -> super.onOptionsItemSelected(item)
         }
-        }
 
+
+        }
 
 }

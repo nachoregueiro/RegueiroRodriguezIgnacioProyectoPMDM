@@ -1,5 +1,7 @@
 package es.regueirorodriguezignacioproyectopmdm
 
+import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
@@ -34,11 +36,9 @@ class Detalle_Pelicula_Activity : AppCompatActivity() {
         tvTitulo.setText(pelicula1.titulo)
         tvDirector.setText(pelicula1.director)
         tvActor.setText(pelicula1.actor)
-        tvNota.setText("" + pelicula1.nota)
+        tvNota.setText( pelicula1.nota)
         Picasso.get().load(pelicula1.url).into(ivFoto)
-
     }
-
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.menu_borrar, menu)
         return true
@@ -51,9 +51,16 @@ class Detalle_Pelicula_Activity : AppCompatActivity() {
         }
         else if(item.itemId==R.id.editar){
             // Iniciar activity de edicion
+            val intent = Intent(this, Formulario_Pelicula::class.java)
+            startActivity(intent)
         }
         else if(item.itemId == R.id.llamar){
             // Intent que abra la app de llamadas (intent explicito). La accion es ACTION_DIAL.
+            /*    val telefono="123123123"
+            startActivity(Intent(Intent.ACTION_DIAL, Uri.parse(telefono)))
+            */
+                /*Falta aqui para */
+            val intent = Intent(Intent.ACTION_SEND)
         }
 
         return super.onOptionsItemSelected(item)

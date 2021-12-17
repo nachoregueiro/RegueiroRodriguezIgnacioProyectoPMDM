@@ -9,12 +9,5 @@
         android:icon="@drawable/check"
         android:title="Check"/>
 
-    <item
-        android:id="@+id/papelera"
-        android:orderInCategory="100"
-        app:showAsAction="always"
-        android:icon="@drawable/papelera"
-        android:title="papelera"/>
-
 
 </menu>

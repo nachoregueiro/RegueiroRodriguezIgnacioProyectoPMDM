@@ -56,11 +56,6 @@ class Formulario_Pelicula : AppCompatActivity() {
                 finish()
                 return true
             }
-            R.id.llamar -> {
-                val telefono = "tel:694573459"
-                startActivity(Intent(Intent.ACTION_DIAL, Uri.parse(telefono)))
-                true
-            }
             //para editar
             R.id.editar -> {
                 tveTitulo.isEnabled=true

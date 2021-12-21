@@ -63,6 +63,7 @@ class Detalle_Pelicula_Activity : AppCompatActivity() {
             // Iniciar activity de edición
             val intent = Intent(this, Formulario_Pelicula::class.java)
             intent.putExtra("Pelicula",pelicula1)
+           //para editar tvTitulo.text = pelicula1.director.toString()
             startActivity(intent)
         }
 

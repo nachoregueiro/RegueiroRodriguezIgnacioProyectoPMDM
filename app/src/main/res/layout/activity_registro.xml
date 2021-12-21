@@ -6,6 +6,8 @@
     android:layout_height="match_parent"
     tools:context=".RegistroActivity">
 
+
+
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/tiNombre"
         android:layout_width="236dp"

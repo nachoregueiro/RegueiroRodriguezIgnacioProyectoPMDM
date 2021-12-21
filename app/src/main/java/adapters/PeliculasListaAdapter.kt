@@ -40,9 +40,7 @@ class PeliculasListaAdapter(val peliculas: List<Pelicula>,val miActivity:Activit
             holder.itemView.rootView.context.startActivity(intent)
         }
     }
-
-
-    class PeliculasViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+     class PeliculasViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val ivFoto =itemView.findViewById<ImageView>(R.id.iv_character)
         val layoutItemPeliculas=itemView.findViewById<ConstraintLayout>(R.id.layoutItemPeliculas)
     }

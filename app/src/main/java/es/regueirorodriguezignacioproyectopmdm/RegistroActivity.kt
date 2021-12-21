@@ -1,5 +1,6 @@
 package es.regueirorodriguezignacioproyectopmdm
 
+import android.app.ActionBar
 import android.app.Activity
 import android.content.Context
 import android.content.Intent
@@ -30,6 +31,16 @@ class RegistroActivity : AppCompatActivity() {
             onBackPressed()
         }
 
+
+        val actionBar = actionBar
+        supportActionBar!!.setDisplayHomeAsUpEnabled(true)
+
+
+
+        binding.btAtrS.setOnClickListener(){
+            onBackPressed()
+            finish()
+        }
 
         }
    /* fun guardarDatos(){

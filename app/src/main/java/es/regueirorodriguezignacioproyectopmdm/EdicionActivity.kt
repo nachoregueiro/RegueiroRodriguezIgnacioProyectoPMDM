@@ -42,6 +42,8 @@ class EdicionActivity : AppCompatActivity() {
         return true
     }
 
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return super.onOptionsItemSelected(item)
        if(item.itemId==R.id.anhadir) {
            peliculas.remove(pelicula)
         val ePr1=binding.etDirector.text.toString()

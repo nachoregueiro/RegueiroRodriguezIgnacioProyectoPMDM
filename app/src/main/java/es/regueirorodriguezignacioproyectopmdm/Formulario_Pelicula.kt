@@ -56,40 +56,26 @@ class Formulario_Pelicula : AppCompatActivity() {
                 finish()
                 return true
             }
-            //para editar
-            R.id.editar -> {
-                tveTitulo.isEnabled=true
-                tveGenero.isEnabled=true
-                tvDirector.isEnabled=true
-                tveAño.isEnabled=true
-                tveNota.isEnabled=true
-                tveUrl.isEnabled=true
+        //para editar
+        R.id.editar -> {
+            tveTitulo.isEnabled=true
+            tveGenero.isEnabled=true
+            tvDirector.isEnabled=true
+            tveAño.isEnabled=true
+            tveNota.isEnabled=true
+            tveUrl.isEnabled=true
 
-                pelicula1 = intent.extras?.get("Pelicula") as Pelicula
+            pelicula1 = intent.extras?.get("Pelicula") as Pelicula
 
-                tveTitulo.setText(pelicula1.titulo)
-               tveNota.setText(pelicula1.nota)
-                tvDirector.setText(pelicula1.director)
-                tveUrl.setText(pelicula1.url)
+            tveTitulo.setText(pelicula1.titulo)
+            tveNota.setText(pelicula1.nota)
+            tvDirector.setText(pelicula1.director)
+            tveUrl.setText(pelicula1.url)
 
-                return true
-            }
-
-            R.id.borrar -> {
-                val builder = AlertDialog.Builder(this)
-                builder.setTitle("Eliminar personaje")
-                    .setMessage("La película seleccionada va a ser eliminada, ¿está seguro?")
-                    .setPositiveButton("Aceptar") {_, _ ->
-                        Toast.makeText(this, "Personaje eliminado.", Toast.LENGTH_SHORT).show()
-                        finish()
-                    }.setNegativeButton("Cancelar", null)
-                    .show()
-                return true
-            }
-            else -> super.onOptionsItemSelected(item)
+            return true
         }
 
-
+        else -> super.onOptionsItemSelected(item)
         }
-
+}
 }

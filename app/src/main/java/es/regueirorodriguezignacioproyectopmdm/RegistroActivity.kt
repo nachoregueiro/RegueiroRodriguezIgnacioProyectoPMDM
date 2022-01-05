@@ -7,6 +7,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Patterns
+import android.view.MenuItem
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
@@ -22,7 +23,7 @@ class RegistroActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityRegistroBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        btAtrás=findViewById(R.id.btAtrás)
+
         setTitle("Registro")
         val btGuardarDatos=findViewById<TextView>(R.id.etEmail)
         val etEmail=findViewById<TextView>(R.id.etEmail)
@@ -32,17 +33,12 @@ class RegistroActivity : AppCompatActivity() {
         }
 
 
+
         val actionBar = actionBar
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
+    }
 
 
-
-        binding.btAtrS.setOnClickListener(){
-            onBackPressed()
-            finish()
-        }
-
-        }
    /* fun guardarDatos(){
         val nombreR = binding.etNombre.text.toString()
         val contraseñaR = binding.etContraseA.text.toString()
@@ -55,7 +51,17 @@ class RegistroActivity : AppCompatActivity() {
         Toast.makeText(this,"Registrado",Toast.LENGTH_SHORT).show()
     }*/
 
-    }
+        override fun onOptionsItemSelected(item: MenuItem): Boolean {
+       return when (item.itemId) {
+           android.R.id.home -> {
+               onBackPressed()
+               return true
+           }
+           else ->
+               return super.onOptionsItemSelected(item)
+       }
+   }
+}
 
 
 

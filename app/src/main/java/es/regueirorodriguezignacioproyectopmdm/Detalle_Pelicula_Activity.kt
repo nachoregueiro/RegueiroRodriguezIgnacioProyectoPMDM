@@ -1,5 +1,6 @@
 package es.regueirorodriguezignacioproyectopmdm
 
+import android.app.AlertDialog
 import android.content.Intent
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
@@ -9,6 +10,7 @@ import android.view.MenuItem
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import com.squareup.picasso.Picasso
 import entities.Pelicula
 import es.regueirorodriguezignacioproyectopmdm.App.Companion.peliculas
@@ -42,6 +44,8 @@ class Detalle_Pelicula_Activity : AppCompatActivity() {
         Picasso.get().load(pelicula1.url).into(ivFoto)
 
 
+        val actionBar = actionBar
+        supportActionBar!!.setDisplayHomeAsUpEnabled(true)
 
         btllamar.setOnClickListener(){
               val telefono="tel:12345678"
@@ -54,19 +58,33 @@ class Detalle_Pelicula_Activity : AppCompatActivity() {
         return true
     }
 
+
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         if(item.itemId == R.id.borrar){
-            peliculas.remove(pelicula1)
+            val builder = AlertDialog.Builder(this)
+            builder.setTitle("Eliminar pelicula")
+                .setMessage("La película seleccionada va a ser eliminada, ¿estás seguro?")
+                .setPositiveButton("Aceptar") { _, _ ->
+                    peliculas.remove(pelicula1)
+                    Toast.makeText(this, "Pelicula eliminada", Toast.LENGTH_SHORT).show()
+                    finish()
+                }.setNegativeButton("Cancelar", null)
+                .show()
+            return true
             finish()
         }
         else if(item.itemId==R.id.editar){
             // Iniciar activity de edición
-            val intent = Intent(this, Formulario_Pelicula::class.java)
+            val intent = Intent(this, EdicionActivity::class.java)
             intent.putExtra("Pelicula",pelicula1)
            //para editar tvTitulo.text = pelicula1.director.toString()
             startActivity(intent)
         }
 
+       else if (item.itemId==item.itemId) {
+              onBackPressed()
+                return true
+            }
 
         return super.onOptionsItemSelected(item)
     }

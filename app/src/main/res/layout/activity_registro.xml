@@ -5,11 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".RegistroActivity">
-
-
+    tools:context=".RegistroActivity">
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/tiNombre"
+        android:id="@+id/tiTextoDirector"
         android:layout_width="236dp"
         android:layout_height="59dp"
         android:layout_marginTop="20dp"
@@ -22,7 +21,7 @@
         app:layout_constraintTop_toBottomOf="@+id/tvLogo">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/etNombre"
+            android:id="@+id/etDirector"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:hint="@string/hint_introducir_nombre"
@@ -54,17 +53,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tiRepiteContraseña" />
 
-    <Button
-        android:id="@+id/btAtrás"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="ATRÁS"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.718"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tiRepiteContraseña" />
-
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/tiApellido"
         android:layout_width="236dp"
@@ -74,7 +62,7 @@
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         app:startIconDrawable="@drawable/ojos2"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tiNombre">
+        app:layout_constraintTop_toBottomOf="@+id/tiTextoDirector">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/etApellido"

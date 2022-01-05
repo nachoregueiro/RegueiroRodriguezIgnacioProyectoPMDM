@@ -43,8 +43,5 @@ class ListaPeliculasActivity : AppCompatActivity() {
         adapter!!.notifyDataSetChanged()
     }
 
-    @Override
-    override fun onBackPressed() {
-        if (true){}
-    }
+
 }

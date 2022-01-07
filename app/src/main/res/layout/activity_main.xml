@@ -14,7 +14,7 @@
         android:text="Entrar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tiTextoDirector" />
+        app:layout_constraintTop_toBottomOf="@+id/tiUsuario" />
 
     <TextView
         android:id="@+id/textView"
@@ -32,7 +32,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/tiTextoDirector"
+        android:id="@+id/tiUsuario"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="@dimen/width_edittext_login"
         android:layout_height="59dp"
@@ -43,7 +43,7 @@
         app:startIconDrawable="@drawable/verificar">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/etDirector"
+            android:id="@+id/etUsuario"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:hint="Introduce nombre de usuario:"
@@ -61,7 +61,7 @@
         app:boxBackgroundColor="@android:color/transparent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tiTextoDirector"
+        app:layout_constraintTop_toBottomOf="@+id/tiUsuario"
         app:startIconDrawable="@drawable/cerrado">
 
         <com.google.android.material.textfield.TextInputEditText

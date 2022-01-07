@@ -58,7 +58,6 @@ class Detalle_Pelicula_Activity : AppCompatActivity() {
         return true
     }
 
-
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         if(item.itemId == R.id.borrar){
             val builder = AlertDialog.Builder(this)

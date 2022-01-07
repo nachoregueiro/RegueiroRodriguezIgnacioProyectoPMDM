@@ -11,6 +11,7 @@ import android.view.MenuItem
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
+import androidx.core.view.get
 import es.regueirorodriguezignacioproyectopmdm.databinding.ActivityRegistroBinding
 import java.util.regex.Pattern
 
@@ -23,34 +24,13 @@ class RegistroActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityRegistroBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
         setTitle("Registro")
         val btGuardarDatos=findViewById<TextView>(R.id.etEmail)
         val etEmail=findViewById<TextView>(R.id.etEmail)
 
-        binding.btGuardarDatos.setOnClickListener{
-            onBackPressed()
-        }
-
-
-
         val actionBar = actionBar
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
     }
-
-
-   /* fun guardarDatos(){
-        val nombreR = binding.etNombre.text.toString()
-        val contraseñaR = binding.etContraseA.text.toString()
-        val sharedPreferences = getSharedPreferences("sharedPrefs",Context.MODE_PRIVATE)
-        val editor = sharedPreferences.edit()
-        editor.apply(){
-            putString("NOMBRER",nombreR)
-            putString("CONTRASEÑAR",contraseñaR)
-        }.apply()
-        Toast.makeText(this,"Registrado",Toast.LENGTH_SHORT).show()
-    }*/
-
         override fun onOptionsItemSelected(item: MenuItem): Boolean {
        return when (item.itemId) {
            android.R.id.home -> {
@@ -60,9 +40,32 @@ class RegistroActivity : AppCompatActivity() {
            else ->
                return super.onOptionsItemSelected(item)
        }
-   }
-}
 
+            binding.btGuardarDatos.setOnClickListener{
+                val pattern=Patterns.EMAIL_ADDRESS
+                if(binding.tiUsuario.editText.toString().trim()==""||binding.tiApellido.editText.toString().trim()==""||
+                    binding.tiEmail.editText.toString().trim()==""||binding.tiContraseA.editText.toString().trim()==""
+                    ||binding.tiRepiteContraseA.editText.toString().trim()==""){
+                    Toast.makeText(this,"Completa todos los campos",Toast.LENGTH_SHORT).show()
+                }else if(pattern.matcher(binding.tiEmail.editText.toString().trim()).matches()==false){
+                    Toast.makeText(this,"Email no válido",Toast.LENGTH_SHORT).show()
+                }
+                else{
+                    var sharedPref=getSharedPreferences("Preferencias de Usuario",Context.MODE_PRIVATE)
+                    var editor=sharedPref.edit()
+                    editor.putString("email",binding.tiEmail.editText.toString().trim())
+                    editor.putString("contraseña",binding.tiContraseA.editText.toString().trim()).commit()
+                    onBackPressed()
+                    /*       editor.apply(){
+                     putString("NOMBRER",nombreR)
+                     putString("CONTRASEÑAR",contraseñaR)
+                 }.apply()*/
+                }
+
+
+            }
+   }
+    }
 
 
 

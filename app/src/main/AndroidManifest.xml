@@ -8,9 +8,9 @@
     <application
         android:name=".App"
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
-        android:label="FilmPeliculas"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:icon="@mipmap/iconoaplicacion"
+        android:label="Pelival"
+        android:roundIcon="@mipmap/iconoaplicacion_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.RegueiroRodriguezIgnacioProyectoPMDM">
         <activity
@@ -31,7 +31,8 @@
             android:exported="true" />
         <activity
             android:name=".MainActivity"
-            android:exported="true">
+            android:exported="true"
+            android:theme="@style/SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

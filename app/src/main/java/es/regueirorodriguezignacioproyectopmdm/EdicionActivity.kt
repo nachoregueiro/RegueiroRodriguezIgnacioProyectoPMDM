@@ -32,7 +32,7 @@ class EdicionActivity : AppCompatActivity() {
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
 
         pelicula=intent.extras?.get("Pelicula") as Pelicula
-        binding.etDirector.setText(pelicula.director)
+        binding.etUsuario.setText(pelicula.director)
         binding.etActor.setText(pelicula.actor)
         binding.etNota.setText(pelicula.nota)
     }
@@ -46,7 +46,7 @@ class EdicionActivity : AppCompatActivity() {
         return super.onOptionsItemSelected(item)
        if(item.itemId==R.id.anhadir) {
            peliculas.remove(pelicula)
-        val ePr1=binding.etDirector.text.toString()
+        val ePr1=binding.etUsuario.text.toString()
        val ePr2= binding.etActor.text.toString()
         val ePr3=binding.etNota.text.toString()
         val pel=Pelicula("a", ePr1, ePr2, ePr3, "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/zvqp1enRqGmzFXV8jXixmICMYVw.jpg")

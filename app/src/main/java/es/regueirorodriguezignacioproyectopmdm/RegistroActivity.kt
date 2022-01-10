@@ -25,8 +25,7 @@ class RegistroActivity : AppCompatActivity() {
         binding = ActivityRegistroBinding.inflate(layoutInflater)
         setContentView(binding.root)
         setTitle("Registro")
-        val btGuardarDatos=findViewById<TextView>(R.id.etEmail)
-        val etEmail=findViewById<TextView>(R.id.etEmail)
+
 
         val actionBar = actionBar
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
@@ -42,7 +41,7 @@ class RegistroActivity : AppCompatActivity() {
        }
 
             binding.btGuardarDatos.setOnClickListener{
-                val pattern=Patterns.EMAIL_ADDRESS
+             /*   val pattern=Patterns.EMAIL_ADDRESS
                 if(binding.tiUsuario.editText.toString().trim()==""||binding.tiApellido.editText.toString().trim()==""||
                     binding.tiEmail.editText.toString().trim()==""||binding.tiContraseA.editText.toString().trim()==""
                     ||binding.tiRepiteContraseA.editText.toString().trim()==""){
@@ -56,7 +55,7 @@ class RegistroActivity : AppCompatActivity() {
                     editor.putString("email",binding.tiEmail.editText.toString().trim())
                     editor.putString("contraseña",binding.tiContraseA.editText.toString().trim()).commit()
                     onBackPressed()
-                    /*       editor.apply(){
+                    *//*       editor.apply(){
                      putString("NOMBRER",nombreR)
                      putString("CONTRASEÑAR",contraseñaR)
                  }.apply()*/
@@ -65,7 +64,7 @@ class RegistroActivity : AppCompatActivity() {
 
             }
    }
-    }
+
 
 
 

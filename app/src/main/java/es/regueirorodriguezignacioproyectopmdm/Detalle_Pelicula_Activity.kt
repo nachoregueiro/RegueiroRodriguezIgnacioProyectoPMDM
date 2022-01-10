@@ -33,6 +33,8 @@ class Detalle_Pelicula_Activity : AppCompatActivity() {
         val tvDirector = findViewById<TextView>(R.id.tvDirector)
         val tvActor = findViewById<TextView>(R.id.tveActor)
         val tvNota = findViewById<TextView>(R.id.tvNota)
+        val tvAño =findViewById<TextView>(R.id.tvAnho)
+        val tvGenero =findViewById<TextView>(R.id.tvGenero)
         val ivFoto = findViewById<ImageView>(R.id.ivFoto)
         val btllamar = findViewById<Button>(R.id.btLlamar)
 
@@ -41,6 +43,8 @@ class Detalle_Pelicula_Activity : AppCompatActivity() {
         tvDirector.setText(pelicula1.director)
         tvActor.setText(pelicula1.actor)
         tvNota.setText( pelicula1.nota)
+        tvGenero.setText(pelicula1.genero)
+        tvAño.setText(pelicula1.año)
         Picasso.get().load(pelicula1.url).into(ivFoto)
 
 

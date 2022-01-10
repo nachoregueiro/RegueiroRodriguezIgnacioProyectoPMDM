@@ -14,6 +14,8 @@ class PeliculasDaoMock : PeliculasDao {
                     "Cristopher Nolan",
                     "Matthew McConaughey",
                     "9.1",
+                    "Ciencia ficción",
+                    "2014",
                     "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/nrSaXF39nDfAAeLKksRCyvSzI2a.jpg"
                 ),
                 Pelicula(
@@ -21,6 +23,8 @@ class PeliculasDaoMock : PeliculasDao {
                     "Denis Villeneuve",
                     "Amy Adams",
                     "8.7",
+                    "Ciencia ficción",
+                    "2016",
                     "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/tbVITeytclB4JKx2LxxasrCCmZx.jpg"
                 ),
                 Pelicula(
@@ -28,6 +32,8 @@ class PeliculasDaoMock : PeliculasDao {
                     "Alex Garland",
                     "Natalie Portman",
                     "7.25",
+                    "Ciencia ficción",
+                    "2018",
                     "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/zvqp1enRqGmzFXV8jXixmICMYVw.jpg",
                 ),
                 Pelicula(
@@ -35,6 +41,8 @@ class PeliculasDaoMock : PeliculasDao {
                     "Steven Spielberg",
                     "Tye Sheridan",
                     "8.5",
+                    "Ciencia ficción",
+                    "2018",
                     "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/2iuVrtC5IpwLtSFSgkIIIKLs0Zq.jpg"
                 )
             )

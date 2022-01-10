@@ -32,9 +32,13 @@ class EdicionActivity : AppCompatActivity() {
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
 
         pelicula=intent.extras?.get("Pelicula") as Pelicula
+        binding.etTitulo.setText(pelicula.titulo)
         binding.etUsuario.setText(pelicula.director)
         binding.etActor.setText(pelicula.actor)
         binding.etNota.setText(pelicula.nota)
+        binding.etUrl.setText(pelicula.url)
+        binding.etGenero.setText(pelicula.genero)
+        binding.etAO.setText(pelicula.año)
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -42,22 +46,26 @@ class EdicionActivity : AppCompatActivity() {
         return true
     }
 
+
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return super.onOptionsItemSelected(item)
-       if(item.itemId==R.id.anhadir) {
-           peliculas.remove(pelicula)
-        val ePr1=binding.etUsuario.text.toString()
-       val ePr2= binding.etActor.text.toString()
-        val ePr3=binding.etNota.text.toString()
-        val pel=Pelicula("a", ePr1, ePr2, ePr3, "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/zvqp1enRqGmzFXV8jXixmICMYVw.jpg")
-          peliculas.add(pel)
-           Toast.makeText(this,"la pelicula se ha actualizado correctamente",Toast.LENGTH_SHORT).show()
-           finish()
+        if(item.itemId==R.id.anhadir){
+            peliculas.remove(pelicula)
+            val ePrDirector=binding.etUsuario.text.toString()
+            val ePrActor= binding.etActor.text.toString()
+            val ePrNota=binding.etNota.text.toString()
+            val ePrUrl=binding.etUrl.text.toString()
+            val ePrTitulo=binding.etTitulo.text.toString()
+            val ePrGenero=binding.etGenero.text.toString()
+            val ePrAño=binding.etAO.text.toString()
+            val pel=Pelicula(ePrTitulo, ePrDirector, ePrActor, ePrNota, ePrGenero,ePrAño,ePrUrl)
+            peliculas.add(pel)
+            Toast.makeText(this,"la pelicula se ha actualizado correctamente",Toast.LENGTH_SHORT).show()
+            finish()
         }
         if(item.itemId==item.itemId){
             onBackPressed()
             return true
         }
         return super.onOptionsItemSelected(item)
-}
+    }
 }

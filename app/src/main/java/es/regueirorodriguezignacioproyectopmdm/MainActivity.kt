@@ -14,17 +14,12 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
 
 
-   /* private lateinit var usuario:EditText
-    private lateinit var contrasenha:EditText
-    private lateinit var sp:SharedPreferences
-    private lateinit var textoUsuario:String
-    private lateinit var textoContrasenha:String
-    private lateinit var botonEntrar:Button*/
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         Thread.sleep(2000)
+        setTheme(R.style.Theme_RegueiroRodriguezIgnacioProyectoPMDM)
         super.onCreate(savedInstanceState)
-        setTheme(R.style.SplashScreen)
         setContentView(R.layout.activity_main)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -39,9 +34,9 @@ class MainActivity : AppCompatActivity() {
 
 
         binding.btEntrar.setOnClickListener {
-            val sharedPref:SharedPreferences=getSharedPreferences("Preferencias de Usuario",MODE_PRIVATE)
-          /*  textoUsuario=usuario.text.toString()
-            textoContrasenha=contrasenha.text.toString()*/
+         /*   val sharedPref:SharedPreferences=getSharedPreferences("Preferencias de Usuario",MODE_PRIVATE)
+          *//*  textoUsuario=usuario.text.toString()
+            textoContrasenha=contrasenha.text.toString()*//*
             val usuario=sharedPref.getString("usuario","Preferencias de Usuario")
             val contrasenha=sharedPref.getString("contraseña","Preferencias de Usuario")
             if(contrasenha!=binding.tiContraseA.editText.toString().trim()){
@@ -50,7 +45,7 @@ class MainActivity : AppCompatActivity() {
             else if(usuario!=binding.tiUsuario.editText.toString().trim()){
                 Toast.makeText(this,"Contraseña incorrecta",Toast.LENGTH_SHORT).show()
             }
-            else{
+            else{*/
             val intent = Intent(this, ListaPeliculasActivity::class.java)
             startActivity(intent)
         }
@@ -66,6 +61,6 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-}
+
 
 

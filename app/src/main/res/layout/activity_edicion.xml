@@ -8,8 +8,8 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/tiUsuario"
-        android:layout_width="351dp"
-        android:layout_height="67dp"
+        android:layout_width="344dp"
+        android:layout_height="56dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="16dp"
@@ -58,6 +58,70 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:hint="Nota:" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tiUrl"
+        android:layout_width="339dp"
+        android:layout_height="78dp"
+        android:layout_marginTop="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tiTextoNota">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etUrl"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="Url de la imagen:" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tiGenero"
+        android:layout_width="326dp"
+        android:layout_height="68dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tiUrl">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etGenero"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="Genero:" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tiAño"
+        android:layout_width="327dp"
+        android:layout_height="62dp"
+        android:layout_marginTop="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tiGenero">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etAño"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="Año:" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tiTitulo"
+        android:layout_width="334dp"
+        android:layout_height="75dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tiAño">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etTitulo"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="Titulo:" />
     </com.google.android.material.textfield.TextInputLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

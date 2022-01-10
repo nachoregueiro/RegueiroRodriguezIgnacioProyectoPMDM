@@ -49,9 +49,11 @@ class Formulario_Pelicula : AppCompatActivity() {
                 val actor = tveGenero.text.toString()
                 val director = tvDirector.text.toString()
                 val nota = tveNota.text.toString()
+                val genero=tveGenero.text.toString()
+                val año=tveAño.text.toString()
                 //el problema era de imagen Como una imagen aqui que no está por defecto es decir la ruta?
                 val url = tveUrl.text.toString()
-                peliculas.add(Pelicula(titulo, director, actor, nota, url))
+                peliculas.add(Pelicula(titulo, director, actor, nota, genero,año,url))
                 Toast.makeText(this, "Pelicula añadida correctamente", Toast.LENGTH_SHORT).show()
                 finish()
                 return true
@@ -70,6 +72,8 @@ class Formulario_Pelicula : AppCompatActivity() {
             tveTitulo.setText(pelicula1.titulo)
             tveNota.setText(pelicula1.nota)
             tvDirector.setText(pelicula1.director)
+            tveGenero.setText(pelicula1.genero)
+            tveAño.setText(pelicula1.año)
             tveUrl.setText(pelicula1.url)
 
             return true

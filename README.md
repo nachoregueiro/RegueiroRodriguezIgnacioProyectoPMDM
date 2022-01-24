@@ -8,5 +8,5 @@
 
 
 
-![Detalle de la peliculas](imagenes/img_1.png)
+![Detalle de la peliculas](imagenes/img.png)
 

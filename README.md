@@ -4,9 +4,9 @@
 
 
 
-![Pantalla de la aplicación](imagenes/img2.png)
+![Pantalla de la aplicación](imagenes/img_2.png)
 
 
 
-![Detalle de la peliculas](imagenes/img1.png)
+![Detalle de la peliculas](imagenes/img_1.png)
 

@@ -2,5 +2,5 @@
 
 **Proyecto que muestra una lista de peliculas y permite realizar otras acciones como editar o borrar**
 
-![Imagenes de la aplicación] (imagenes/img.png)
+![Imagenes de la aplicación](imagenes/img.png)
 

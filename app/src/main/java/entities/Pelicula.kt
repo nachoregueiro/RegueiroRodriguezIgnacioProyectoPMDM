@@ -1,9 +1,10 @@
 package entities
 
+import com.google.gson.annotations.SerializedName
 import java.io.Serializable
 
 data class Pelicula(
-    var titulo:String,
+    @SerializedName("title") var titulo:String,
     var director:String,
     var actor:String,
     var nota:String,

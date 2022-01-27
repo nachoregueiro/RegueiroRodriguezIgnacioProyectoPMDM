@@ -1,6 +1,7 @@
 package es.regueirorodriguezignacioproyectopmdm
 
 import android.app.AlertDialog
+import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
@@ -14,6 +15,7 @@ import android.widget.Toast
 import com.squareup.picasso.Picasso
 import entities.Pelicula
 import es.regueirorodriguezignacioproyectopmdm.App.Companion.peliculas
+import java.lang.Exception
 
 class Detalle_Pelicula_Activity : AppCompatActivity() {
 
@@ -47,6 +49,13 @@ class Detalle_Pelicula_Activity : AppCompatActivity() {
         tvAño.setText(pelicula1.año)
         Picasso.get().load(pelicula1.url).into(ivFoto)
 
+        if(!pelicula1.url.equals("")){
+        try {
+            Picasso.get().load("https://sercide.com/wp-content/themes/consultix/images/no-image-found-360x260.png")
+        }catch (e:Exception){
+            Toast.makeText(getApplicationContext(), "no imagen", Toast.LENGTH_SHORT).show()
+        };
+        }
 
         val actionBar = actionBar
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)

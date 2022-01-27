@@ -11,4 +11,6 @@ interface Api {
     /*
     TODO:declarar los métodos siguiendo la documentación
      */
+
+
 }

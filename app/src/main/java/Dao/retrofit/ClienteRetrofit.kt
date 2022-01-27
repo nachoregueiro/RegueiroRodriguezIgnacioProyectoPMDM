@@ -1,18 +1,19 @@
 package Dao.retrofit
 
+import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
-object Retrofit {
+object ClienteRetrofit {
     private fun clienteRetroFit(): Retrofit {
-        val retrofit =Retrofit.builder
-            .baseUrl("https://damapi.herokuapp.com/api/v1")
+        val retrofit = Retrofit.Builder()
             .addConverterFactory(GsonConverterFactory.create())
+            .baseUrl("https://damapi.herokuapp.com/api/v1/")
             .build()
 
         return retrofit
-
     }
 
+    val apiRetroFit = clienteRetroFit().create(Api::class.java)
 
 
-    val apiRetroFit= clienteRetroFit().create(Api::class.java)
+}

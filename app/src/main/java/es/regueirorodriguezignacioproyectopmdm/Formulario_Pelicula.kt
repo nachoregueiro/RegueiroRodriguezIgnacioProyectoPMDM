@@ -27,7 +27,7 @@ class Formulario_Pelicula : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_formulario_pelicula)
 
-        //formulario detalle peliculas
+        //Formulario detalle peliculas
        tveTitulo=findViewById(R.id.tveTitulo)
         tveGenero=findViewById<TextInputEditText>(R.id.tveGénero)
         tvDirector=findViewById<TextInputEditText>(R.id.tveDirector)
@@ -51,14 +51,14 @@ class Formulario_Pelicula : AppCompatActivity() {
                 val nota = tveNota.text.toString()
                 val genero=tveGenero.text.toString()
                 val año=tveAño.text.toString()
-                //el problema era de imagen Como una imagen aqui que no está por defecto es decir la ruta?
+                //El problema era de imagen Como una imagen aqui que no está por defecto es decir la ruta?
                 val url = tveUrl.text.toString()
                 peliculas.add(Pelicula(titulo, director, actor, nota, genero,año,url))
                 Toast.makeText(this, "Pelicula añadida correctamente", Toast.LENGTH_SHORT).show()
                 finish()
                 return true
             }
-        //para editar
+        //Para editar
         R.id.editar -> {
             tveTitulo.isEnabled=true
             tveGenero.isEnabled=true

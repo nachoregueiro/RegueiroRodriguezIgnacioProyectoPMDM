@@ -1,5 +1,6 @@
 package es.regueirorodriguezignacioproyectopmdm
 
+import Dao.retrofit.ClienteRetrofit
 import adapters.PeliculasListaAdapter
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -28,7 +29,12 @@ class ListaPeliculasActivity : AppCompatActivity() {
         binding = ActivityListaPeliculasBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val llamadaApi: Call<List<Pelicula>> = ClienteRe.getPeliculas()
+
+        val llamadaApi:Call<List<Pelicula>> = ClienteRetrofit.apiRetroFit.getPeliculas()
+
+
+
+
 
         llamadaApi.enqueue(object :Callback<List<Pelicula>> {
             override fun onResponse(call: Call<List<Pelicula>>,response: Response<List<Pelicula>>) {

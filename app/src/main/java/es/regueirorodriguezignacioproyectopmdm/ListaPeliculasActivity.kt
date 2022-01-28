@@ -1,6 +1,8 @@
 package es.regueirorodriguezignacioproyectopmdm
 
+import Dao.retrofit.Api
 import Dao.retrofit.ClienteRetrofit
+import Dao.retrofit.Usuario
 import adapters.PeliculasListaAdapter
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -15,6 +17,7 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
 
 class ListaPeliculasActivity : AppCompatActivity() {
     private lateinit var binding: ActivityListaPeliculasBinding
@@ -33,17 +36,19 @@ class ListaPeliculasActivity : AppCompatActivity() {
         val llamadaApi:Call<List<Pelicula>> = ClienteRetrofit.apiRetroFit.getPeliculas()
 
 
-
-
-
         llamadaApi.enqueue(object :Callback<List<Pelicula>> {
             override fun onResponse(call: Call<List<Pelicula>>,response: Response<List<Pelicula>>) {
                 Toast.makeText(context,response.body().toString(),Toast.LENGTH_SHORT).show()
+                //actualizar el adapter
+
+                //val adapter=
             }
             override fun onFailure(call: Call<List<Pelicula>>, t: Throwable) {
+                //todo al carajo
                 Log.d("PRUEBA",t.message.toString())
             }
         })
+
 
         val layoutManager=GridLayoutManager(this,2)
         adapter = PeliculasListaAdapter(peliculas,this)

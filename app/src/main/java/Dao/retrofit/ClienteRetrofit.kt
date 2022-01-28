@@ -13,7 +13,6 @@ object ClienteRetrofit {
         return retrofit
     }
 
-    val apiRetroFit = clienteRetroFit().create(Api::class.java)
-
+    val apiRetroFit: Api = clienteRetroFit().create(Api::class.java)
 
 }

@@ -1,13 +1,19 @@
 package es.regueirorodriguezignacioproyectopmdm
 
+import Dao.retrofit.Api
 import android.content.Intent
 import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import es.regueirorodriguezignacioproyectopmdm.databinding.ActivityMainBinding
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
+import retrofit2.converter.gson.GsonConverterFactory
 
 
 class MainActivity : AppCompatActivity() {
@@ -31,6 +37,37 @@ class MainActivity : AppCompatActivity() {
 
 */
 
+        //HACE LO DE RETROFIT SE SUPONE(!) ESTAMOS EN ELLO
+        val retrofit = Retrofit.Builder()
+            .addConverterFactory(GsonConverterFactory.create())
+            .baseUrl("https://damapi.herokuapp.com/api/v1/")
+            .build()
+
+        val service = retrofit.create(Api::class.java)
+        val loginCall = service.login(u)
+
+        loginCall.enqueue(object: Callback<Token> {
+            override fun onFailure(call: Call<Token>, t: Throwable) {
+                Log.d("respuesta: onFailure", t.toString())
+
+            }
+
+            override fun onResponse(call: Call<Token>, response: Response<Token>) {
+                Log.d("respuesta: onResponse", response.toString())
+
+                if (response.code() > 299 || response.code() < 200) {
+                    // Muestro alerta: no se ha podido crear el usuario
+
+                } else {
+                    val token = response.body()?.token
+                    Log.d("respuesta: token:", token.orEmpty())
+
+                    // TODO: Muestro mensaje de usuario creado correctamente.
+
+                    // TODO: Guardo en sharedPreferences el token
+
+                    // TODO: Inicio nueva activity
+                }
 
 
         binding.btEntrar.setOnClickListener {

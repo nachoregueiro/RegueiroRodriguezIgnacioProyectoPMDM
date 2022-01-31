@@ -1,6 +1,7 @@
 package es.regueirorodriguezignacioproyectopmdm
 
 import Dao.retrofit.Api
+import Dao.retrofit.ClienteRetrofit
 import android.content.Intent
 import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
@@ -38,7 +39,7 @@ class MainActivity : AppCompatActivity() {
 */
 
         //HACE LO DE RETROFIT SE SUPONE(!) ESTAMOS EN ELLO
-        val retrofit = Retrofit.Builder()
+/*        val retrofit =ClienteRetrofit.builder()
             .addConverterFactory(GsonConverterFactory.create())
             .baseUrl("https://damapi.herokuapp.com/api/v1/")
             .build()
@@ -57,6 +58,7 @@ class MainActivity : AppCompatActivity() {
 
                 if (response.code() > 299 || response.code() < 200) {
                     // Muestro alerta: no se ha podido crear el usuario
+                    Toast.makeText(this,"No ")
 
                 } else {
                     val token = response.body()?.token
@@ -67,7 +69,7 @@ class MainActivity : AppCompatActivity() {
                     // TODO: Guardo en sharedPreferences el token
 
                     // TODO: Inicio nueva activity
-                }
+                }*/
 
 
         binding.btEntrar.setOnClickListener {

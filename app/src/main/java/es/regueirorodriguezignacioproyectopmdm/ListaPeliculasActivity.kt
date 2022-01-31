@@ -27,18 +27,21 @@ class ListaPeliculasActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_lista_peliculas)
 
-        val context = this
 
         binding = ActivityListaPeliculasBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        val context=this
 
-        val llamadaApi:Call<List<Pelicula>> = ClienteRetrofit.apiRetroFit.getPeliculas()
+        val llamadaApi:Call<List<Pelicula>> = ClienteRetrofit.apiRetroFit.getPeliculas("Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxZjdhMmE2ODgxM2Q2ZTRlNDVmZWQ4MiIsImlhdCI6MTY0MzYxODk5OSwiZXhwIjoxNjQzNzA1Mzk5fQ.9hlcNH1RlY1GJMrxAE2wvTOTv5gVbB5AMiWmrjxVE9Q")
 
 
         llamadaApi.enqueue(object :Callback<List<Pelicula>> {
-            override fun onResponse(call: Call<List<Pelicula>>,response: Response<List<Pelicula>>) {
-                Toast.makeText(context,response.body().toString(),Toast.LENGTH_SHORT).show()
+            override fun onResponse(call: Call<List<Pelicula>>,
+                                    response: Response<List<Pelicula>>) {
+
+                var respon = response.body().
+                Toast.makeText(context,respon,Toast.LENGTH_SHORT).show()
                 //actualizar el adapter
 
                 //val adapter=
@@ -47,7 +50,8 @@ class ListaPeliculasActivity : AppCompatActivity() {
                 //todo al carajo
                 Log.d("PRUEBA",t.message.toString())
             }
-        })
+        }
+        )
 
 
         val layoutManager=GridLayoutManager(this,2)

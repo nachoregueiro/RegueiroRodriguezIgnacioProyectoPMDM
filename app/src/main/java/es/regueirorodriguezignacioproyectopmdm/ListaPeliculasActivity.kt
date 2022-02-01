@@ -40,11 +40,13 @@ class ListaPeliculasActivity : AppCompatActivity() {
             override fun onResponse(call: Call<List<Pelicula>>,
                                     response: Response<List<Pelicula>>) {
 
-                var respon = response.body().
-                Toast.makeText(context,respon,Toast.LENGTH_SHORT).show()
+                var respon = response.body()
+
+                Toast.makeText(context,"",Toast.LENGTH_SHORT).show()
                 //actualizar el adapter
 
                 //val adapter=
+
             }
             override fun onFailure(call: Call<List<Pelicula>>, t: Throwable) {
                 //todo al carajo
@@ -75,6 +77,8 @@ class ListaPeliculasActivity : AppCompatActivity() {
         val size = peliculas.size
         adapter!!.notifyDataSetChanged()
     }
+
+
 
 
 }

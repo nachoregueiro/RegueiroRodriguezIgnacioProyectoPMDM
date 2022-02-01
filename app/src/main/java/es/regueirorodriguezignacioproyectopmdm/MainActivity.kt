@@ -2,6 +2,8 @@ package es.regueirorodriguezignacioproyectopmdm
 
 import Dao.retrofit.Api
 import Dao.retrofit.ClienteRetrofit
+import Dao.retrofit.Usuario
+import Dao.retrofit.entities.Token
 import android.content.Intent
 import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
@@ -21,8 +23,6 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
 
 
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         Thread.sleep(2000)
         setTheme(R.style.Theme_RegueiroRodriguezIgnacioProyectoPMDM)
@@ -30,6 +30,31 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+
+        binding.btEntrar.setOnClickListener {
+            /*   val sharedPref:SharedPreferences=getSharedPreferences("Preferencias de Usuario",MODE_PRIVATE)
+  *//*  textoUsuario=usuario.text.toString()
+            textoContrasenha=contrasenha.text.toString()*//*
+            val usuario=sharedPref.getString("usuario","Preferencias de Usuario")
+            val contrasenha=sharedPref.getString("contraseña","Preferencias de Usuario")
+            if(contrasenha!=binding.tiContraseA.editText.toString().trim()){
+                Toast.makeText(this,"Usuario incorrecto",Toast.LENGTH_SHORT).show()
+            }
+            else if(usuario!=binding.tiUsuario.editText.toString().trim()){
+                Toast.makeText(this,"Contraseña incorrecta",Toast.LENGTH_SHORT).show()
+            }
+            else{
+            val intent = Intent(this, ListaPeliculasActivity::class.java)
+            startActivity(intent)
+        }*/
+
+        }
+
+        binding.btRegistro.setOnClickListener {
+            val intent = Intent(this@MainActivity, RegistroActivity::class.java)
+            startActivity(intent)
+        }
 /*
 
         usuario=findViewById(R.id.tiUsuario)
@@ -39,15 +64,11 @@ class MainActivity : AppCompatActivity() {
 */
 
         //HACE LO DE RETROFIT SE SUPONE(!) ESTAMOS EN ELLO
-/*        val retrofit =ClienteRetrofit.builder()
-            .addConverterFactory(GsonConverterFactory.create())
-            .baseUrl("https://damapi.herokuapp.com/api/v1/")
-            .build()
+        //falta sacar el texto de los editText
+        val context = this
+        val loginCall = ClienteRetrofit.apiRetroFit.login(Usuario("gga@gmail.com", "12345"))
 
-        val service = retrofit.create(Api::class.java)
-        val loginCall = service.login(u)
-
-        loginCall.enqueue(object: Callback<Token> {
+        loginCall.enqueue(object : Callback<Token> {
             override fun onFailure(call: Call<Token>, t: Throwable) {
                 Log.d("respuesta: onFailure", t.toString())
 
@@ -58,8 +79,8 @@ class MainActivity : AppCompatActivity() {
 
                 if (response.code() > 299 || response.code() < 200) {
                     // Muestro alerta: no se ha podido crear el usuario
-                    Toast.makeText(this,"No ")
-
+                    Toast.makeText(context, "No se ha podido crear el usuario", Toast.LENGTH_SHORT)
+                        .show()
                 } else {
                     val token = response.body()?.token
                     Log.d("respuesta: token:", token.orEmpty())
@@ -69,35 +90,13 @@ class MainActivity : AppCompatActivity() {
                     // TODO: Guardo en sharedPreferences el token
 
                     // TODO: Inicio nueva activity
-                }*/
-
-
-        binding.btEntrar.setOnClickListener {
-         /*   val sharedPref:SharedPreferences=getSharedPreferences("Preferencias de Usuario",MODE_PRIVATE)
-          *//*  textoUsuario=usuario.text.toString()
-            textoContrasenha=contrasenha.text.toString()*//*
-            val usuario=sharedPref.getString("usuario","Preferencias de Usuario")
-            val contrasenha=sharedPref.getString("contraseña","Preferencias de Usuario")
-            if(contrasenha!=binding.tiContraseA.editText.toString().trim()){
-                Toast.makeText(this,"Usuario incorrecto",Toast.LENGTH_SHORT).show()
+                }
             }
-            else if(usuario!=binding.tiUsuario.editText.toString().trim()){
-                Toast.makeText(this,"Contraseña incorrecta",Toast.LENGTH_SHORT).show()
-            }
-            else{*/
-            val intent = Intent(this, ListaPeliculasActivity::class.java)
-            startActivity(intent)
-        }
-
-        binding.btRegistro.setOnClickListener {
-            val intent = Intent(this, RegistroActivity::class.java)
-            startActivity(intent)
-        }
-
+        })
     }
+}
 
 
-    }
 
 
 

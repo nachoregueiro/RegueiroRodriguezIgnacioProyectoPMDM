@@ -1,8 +1,10 @@
 package es.regueirorodriguezignacioproyectopmdm
 
+import Dao.retrofit.ClienteRetrofit
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.system.Os.remove
+import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View.inflate
@@ -13,6 +15,9 @@ import es.regueirorodriguezignacioproyectopmdm.databinding.ActivityDetallePelicu
 import es.regueirorodriguezignacioproyectopmdm.databinding.ActivityEdicionBinding
 import es.regueirorodriguezignacioproyectopmdm.databinding.ActivityMainBinding
 import es.regueirorodriguezignacioproyectopmdm.databinding.ActivityRegistroBinding
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 
 class EdicionActivity : AppCompatActivity() {
@@ -39,6 +44,31 @@ class EdicionActivity : AppCompatActivity() {
         binding.etUrl.setText(pelicula.url)
         binding.etGenero.setText(pelicula.genero)
         binding.etAO.setText(pelicula.año)
+
+  /*      val context = this
+        val llamadaApi: Call<List<Pelicula>> =
+            ClienteRetrofit.apiRetroFit.getPeliculas("Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxZjdhMmE2ODgxM2Q2ZTRlNDVmZWQ4MiIsImlhdCI6MTY0Mzk2NzUwNywiZXhwIjoxNjQ0MDUzOTA3fQ.vynx3nsnb8X204_zvPwUK7KVVBFM5E-yNv9iNz4_m04")
+
+
+        llamadaApi.enqueue(object : Callback<List<Pelicula>> {
+            override fun onResponse(
+                call: Call<List<Pelicula>>,
+                response: Response<List<Pelicula>>
+            ) {
+
+                var respon = response.body()
+                Toast.makeText(context, "", Toast.LENGTH_SHORT).show()
+                //actualizar el adapter
+                binding.rvPeliculasList.adapter = adapter
+
+            }
+
+            override fun onFailure(call: Call<List<Pelicula>>, t: Throwable) {
+                Log.d("Error", t.message.toString())
+            }
+        }
+        )*/
+
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {

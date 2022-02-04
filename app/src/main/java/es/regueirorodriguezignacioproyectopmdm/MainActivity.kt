@@ -33,8 +33,9 @@ class MainActivity : AppCompatActivity() {
 
 
         binding.btEntrar.setOnClickListener {
-            /*   val sharedPref:SharedPreferences=getSharedPreferences("Preferencias de Usuario",MODE_PRIVATE)
-  *//*  textoUsuario=usuario.text.toString()
+
+        /*val sharedPref:SharedPreferences=getSharedPreferences("Preferencias de Usuario",MODE_PRIVATE)
+            textoUsuario=usuario.text.toString()
             textoContrasenha=contrasenha.text.toString()*//*
             val usuario=sharedPref.getString("usuario","Preferencias de Usuario")
             val contrasenha=sharedPref.getString("contraseña","Preferencias de Usuario")
@@ -50,33 +51,30 @@ class MainActivity : AppCompatActivity() {
         }*/
 
         }
-
         binding.btRegistro.setOnClickListener {
             val intent = Intent(this@MainActivity, RegistroActivity::class.java)
             startActivity(intent)
         }
 /*
-
         usuario=findViewById(R.id.tiUsuario)
         contrasenha=findViewById(R.id.etContraseña)
         botonEntrar=findViewById(R.id.btEntrar)
-
 */
-
         //HACE LO DE RETROFIT SE SUPONE(!) ESTAMOS EN ELLO
         //falta sacar el texto de los editText
+
         val context = this
         val loginCall = ClienteRetrofit.apiRetroFit.login(Usuario("gga@gmail.com", "12345"))
 
         loginCall.enqueue(object : Callback<Token> {
             override fun onFailure(call: Call<Token>, t: Throwable) {
                 Log.d("respuesta: onFailure", t.toString())
-
             }
 
             override fun onResponse(call: Call<Token>, response: Response<Token>) {
                 Log.d("respuesta: onResponse", response.toString())
-
+                val intent=Intent(this@MainActivity,ListaPeliculasActivity::class.java)
+                startActivity(intent)
                 if (response.code() > 299 || response.code() < 200) {
                     // Muestro alerta: no se ha podido crear el usuario
                     Toast.makeText(context, "No se ha podido crear el usuario", Toast.LENGTH_SHORT)
@@ -84,6 +82,7 @@ class MainActivity : AppCompatActivity() {
                 } else {
                     val token = response.body()?.token
                     Log.d("respuesta: token:", token.orEmpty())
+                    val intent=Intent(this@MainActivity,ListaPeliculasActivity::class.java)
 
                     // TODO: Muestro mensaje de usuario creado correctamente.
 

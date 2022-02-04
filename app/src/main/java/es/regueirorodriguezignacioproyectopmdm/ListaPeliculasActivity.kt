@@ -32,8 +32,7 @@ class ListaPeliculasActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         val context=this
-
-        val llamadaApi:Call<List<Pelicula>> = ClienteRetrofit.apiRetroFit.getPeliculas("Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxZjdhMmE2ODgxM2Q2ZTRlNDVmZWQ4MiIsImlhdCI6MTY0MzYxODk5OSwiZXhwIjoxNjQzNzA1Mzk5fQ.9hlcNH1RlY1GJMrxAE2wvTOTv5gVbB5AMiWmrjxVE9Q")
+        val llamadaApi:Call<List<Pelicula>> = ClienteRetrofit.apiRetroFit.getPeliculas("Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxZjdhMmE2ODgxM2Q2ZTRlNDVmZWQ4MiIsImlhdCI6MTY0Mzk2NzUwNywiZXhwIjoxNjQ0MDUzOTA3fQ.vynx3nsnb8X204_zvPwUK7KVVBFM5E-yNv9iNz4_m04")
 
 
         llamadaApi.enqueue(object :Callback<List<Pelicula>> {
@@ -41,44 +40,33 @@ class ListaPeliculasActivity : AppCompatActivity() {
                                     response: Response<List<Pelicula>>) {
 
                 var respon = response.body()
-
                 Toast.makeText(context,"",Toast.LENGTH_SHORT).show()
                 //actualizar el adapter
-
-                //val adapter=
+                binding.rvPeliculasList.adapter = adapter
 
             }
             override fun onFailure(call: Call<List<Pelicula>>, t: Throwable) {
-                //todo al carajo
-                Log.d("PRUEBA",t.message.toString())
+                Log.d("Error",t.message.toString())
             }
         }
         )
 
-
         val layoutManager=GridLayoutManager(this,2)
         adapter = PeliculasListaAdapter(peliculas,this)
         binding.rvPeliculasList.adapter =adapter
-
         binding.rvPeliculasList.layoutManager =layoutManager
-
         setTitle("Lista de peliculas")
 
         binding.botNFlotante.setOnClickListener {
             val intent = Intent(this, Formulario_Pelicula::class.java)
             startActivity(intent)
         }
-
     }
-
 
     override fun onResume() {
         super.onResume()
         val size = peliculas.size
         adapter!!.notifyDataSetChanged()
     }
-
-
-
 
 }

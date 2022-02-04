@@ -1,18 +1,24 @@
 package es.regueirorodriguezignacioproyectopmdm
 
+import Dao.retrofit.ClienteRetrofit
 import android.app.ActionBar
 import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.util.Patterns
 import android.view.MenuItem
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 import androidx.core.view.get
+import entities.Pelicula
 import es.regueirorodriguezignacioproyectopmdm.databinding.ActivityRegistroBinding
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 import java.util.regex.Pattern
 
 class RegistroActivity : AppCompatActivity() {
@@ -60,6 +66,31 @@ class RegistroActivity : AppCompatActivity() {
                      putString("CONTRASEÑAR",contraseñaR)
                  }.apply()*/
                 }
+        /*    val context = this
+            val llamadaApi: Call<List<Pelicula>> =
+                ClienteRetrofit.apiRetroFit.getPeliculas("Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxZjdhMmE2ODgxM2Q2ZTRlNDVmZWQ4MiIsImlhdCI6MTY0Mzk2NzUwNywiZXhwIjoxNjQ0MDUzOTA3fQ.vynx3nsnb8X204_zvPwUK7KVVBFM5E-yNv9iNz4_m04")
+
+
+            llamadaApi.enqueue(object : Callback<List<Pelicula>> {
+                override fun onResponse(
+                    call: Call<List<Pelicula>>,
+                    response: Response<List<Pelicula>>
+                ) {
+
+                    var respon = response.body()
+                    Toast.makeText(context, "", Toast.LENGTH_SHORT).show()
+                    //actualizar el adapter
+                    binding.rvPeliculasList.adapter = adapter
+
+                }
+
+                override fun onFailure(call: Call<List<Pelicula>>, t: Throwable) {
+                    Log.d("Error", t.message.toString())
+                }
+            }*/
+
+
+
 
 
             }

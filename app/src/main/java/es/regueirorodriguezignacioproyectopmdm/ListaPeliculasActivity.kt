@@ -31,9 +31,9 @@ class ListaPeliculasActivity : AppCompatActivity() {
         binding = ActivityListaPeliculasBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val context=this
-        val llamadaApi:Call<List<Pelicula>> = ClienteRetrofit.apiRetroFit.getPeliculas("Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxZjdhMmE2ODgxM2Q2ZTRlNDVmZWQ4MiIsImlhdCI6MTY0Mzk2NzUwNywiZXhwIjoxNjQ0MDUzOTA3fQ.vynx3nsnb8X204_zvPwUK7KVVBFM5E-yNv9iNz4_m04")
 
+        val context=this
+        val llamadaApi:Call<List<Pelicula>> = ClienteRetrofit.apiRetroFit.getPeliculas("Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxZjdhMmE2ODgxM2Q2ZTRlNDVmZWQ4MiIsImlhdCI6MTY0NDIyMTM4MCwiZXhwIjoxNjQ0MzA3NzgwfQ.yMrjSqhiTbg6f85hExusc1X0mpxl1dgmlSyBh1bJfVg")
 
         llamadaApi.enqueue(object :Callback<List<Pelicula>> {
             override fun onResponse(call: Call<List<Pelicula>>,
@@ -43,7 +43,7 @@ class ListaPeliculasActivity : AppCompatActivity() {
                 Toast.makeText(context,"",Toast.LENGTH_SHORT).show()
                 //actualizar el adapter
                 binding.rvPeliculasList.adapter = adapter
-
+                //adapter
             }
             override fun onFailure(call: Call<List<Pelicula>>, t: Throwable) {
                 Log.d("Error",t.message.toString())

@@ -18,7 +18,9 @@ interface Api {
 
     @GET("movies")
     fun getPeliculas(@Header("Authorization")token: String): Call<List<Pelicula>>
+
     /*
-    TODO:declarar los métodos siguiendo la documentación
+        TODO:declarar los métodos siguiendo la documentación
      */
+
 }

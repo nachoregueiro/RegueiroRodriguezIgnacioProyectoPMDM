@@ -54,8 +54,9 @@ class Detalle_Pelicula_Activity : AppCompatActivity() {
         tvNota.setText(pelicula1.nota)
         tvGenero.setText(pelicula1.genero)
         tvAño.setText(pelicula1.año)
-
+        Picasso.get().load(pelicula1.url).into(ivFoto)
         //error al cargar la foto
+
 
         if (!pelicula1.url.equals("")) {
             try {
@@ -65,7 +66,7 @@ class Detalle_Pelicula_Activity : AppCompatActivity() {
                 Toast.makeText(getApplicationContext(), "NO IMAGEN", Toast.LENGTH_SHORT).show()
             };
         }
-        Picasso.get().load(pelicula1.url).into(ivFoto)
+
 
 
         val actionBar = actionBar
@@ -78,7 +79,7 @@ class Detalle_Pelicula_Activity : AppCompatActivity() {
 
         val context = this
         val loginCall = ClienteRetrofit.apiRetroFit.login(Usuario("", ""))
-
+/*
         loginCall.enqueue(object : Callback<Token> {
             override fun onFailure(call: Call<Token>, t: Throwable) {
                 Log.d("respuesta: onFailure", t.toString())
@@ -112,7 +113,7 @@ class Detalle_Pelicula_Activity : AppCompatActivity() {
                 }
 
             }
-        })
+        })*/
     }
             override fun onCreateOptionsMenu(menu: Menu?): Boolean {
                 menuInflater.inflate(R.menu.menu_borrar, menu)

@@ -75,7 +75,7 @@ class MainActivity : AppCompatActivity() {
                 Log.d("respuesta: onResponse", response.toString())
                 val intent=Intent(this@MainActivity,ListaPeliculasActivity::class.java)
                 startActivity(intent)
-                if (response.code() > 299 || response.code() < 200) {
+              if (response.code() > 299 || response.code() < 200) {
                     // Muestro alerta: no se ha podido crear el usuario
                     Toast.makeText(context, "No se ha podido crear el usuario", Toast.LENGTH_SHORT)
                         .show()
@@ -83,8 +83,9 @@ class MainActivity : AppCompatActivity() {
                     val token = response.body()?.token
                     Log.d("respuesta: token:", token.orEmpty())
                     val intent=Intent(this@MainActivity,ListaPeliculasActivity::class.java)
+                    Toast.makeText(context,"Se ha creado el usuario",Toast.LENGTH_SHORT)
+                        .show()
 
-                    // TODO: Muestro mensaje de usuario creado correctamente.
 
                     // TODO: Guardo en sharedPreferences el token
 

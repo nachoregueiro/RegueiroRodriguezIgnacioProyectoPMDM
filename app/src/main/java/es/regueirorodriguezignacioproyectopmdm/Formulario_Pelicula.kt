@@ -1,16 +1,23 @@
 package es.regueirorodriguezignacioproyectopmdm
 
+import Dao.retrofit.ClienteRetrofit
+import adapters.PeliculasListaAdapter
 import android.app.AlertDialog
 import android.content.Intent
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.textfield.TextInputEditText
 import entities.Pelicula
 import es.regueirorodriguezignacioproyectopmdm.App.Companion.peliculas
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class Formulario_Pelicula : AppCompatActivity() {
 
@@ -78,7 +85,53 @@ class Formulario_Pelicula : AppCompatActivity() {
                 peliculas.add(Pelicula(titulo, director, actor, nota, genero, año, url))
                 Toast.makeText(this, "Pelicula añadida correctamente", Toast.LENGTH_SHORT).show()
                 finish()
+
+
+
+                val context = this
+                val llamadaApi: Call<Unit> = ClienteRetrofit.apiRetroFit.create(Pelicula(titulo,director,actor,nota,genero,año,url),"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxZjdhMmE2ODgxM2Q2ZTRlNDVmZWQ4MiIsImlhdCI6MTY0NDMwODAyOSwiZXhwIjoxNjQ0Mzk0NDI5fQ.Fk1ANBsuD_QiJYUvJbdI9uBzTDrGypZaFVRPg1tH7Ow")
+
+
+                llamadaApi.enqueue(object : Callback<Unit> {
+
+
+                    override fun onFailure(call: Call<Unit>, t: Throwable) {
+                        TODO("Not yet implemented")
+                    }
+
+                    override fun onResponse(call: Call<Unit>, response: Response<Unit>) {
+                        Toast.makeText(context, "chupate un huevo", Toast.LENGTH_SHORT).show()
+                    }
+                })
+
+
+
+
+
+
+
+
+
+
+
+
+
                 return true
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             }
             //Para editar
             R.id.editar -> {

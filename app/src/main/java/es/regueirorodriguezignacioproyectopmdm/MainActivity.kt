@@ -34,21 +34,35 @@ class MainActivity : AppCompatActivity() {
 
         binding.btEntrar.setOnClickListener {
 
-        /*val sharedPref:SharedPreferences=getSharedPreferences("Preferencias de Usuario",MODE_PRIVATE)
-            textoUsuario=usuario.text.toString()
-            textoContrasenha=contrasenha.text.toString()*//*
-            val usuario=sharedPref.getString("usuario","Preferencias de Usuario")
-            val contrasenha=sharedPref.getString("contraseña","Preferencias de Usuario")
-            if(contrasenha!=binding.tiContraseA.editText.toString().trim()){
-                Toast.makeText(this,"Usuario incorrecto",Toast.LENGTH_SHORT).show()
-            }
-            else if(usuario!=binding.tiUsuario.editText.toString().trim()){
-                Toast.makeText(this,"Contraseña incorrecta",Toast.LENGTH_SHORT).show()
-            }
-            else{
-            val intent = Intent(this, ListaPeliculasActivity::class.java)
-            startActivity(intent)
-        }*/
+            val context = this
+            val loginCall = ClienteRetrofit.apiRetroFit.login(Usuario("gga@gmail.com", "12345"))
+
+            loginCall.enqueue(object : Callback<Token> {
+                override fun onFailure(call: Call<Token>, t: Throwable) {
+                    Log.d("respuesta: onFailure", t.toString())
+                }
+
+                override fun onResponse(call: Call<Token>, response: Response<Token>) {
+                    Log.d("respuesta: onResponse", response.toString())
+                    if (response.code() > 299 || response.code() < 200) {
+                        // Muestro alerta: no se ha podido crear el usuario
+                        Toast.makeText(context, "No se ha podido crear el usuario", Toast.LENGTH_SHORT)
+                            .show()
+                    } else {
+                        val token = response.body()?.token
+                        Log.d("respuesta: token:", token.orEmpty())
+                        Toast.makeText(context, "Se ha creado el usuario", Toast.LENGTH_SHORT)
+                            .show()
+                        val intent = Intent(this@MainActivity, ListaPeliculasActivity::class.java)
+                        startActivity(intent)
+
+
+                        // TODO: Guardo en sharedPreferences el token
+
+                        // TODO: Inicio nueva activity
+                    }
+                }
+            })
 
         }
         binding.btRegistro.setOnClickListener {
@@ -63,36 +77,7 @@ class MainActivity : AppCompatActivity() {
         //HACE LO DE RETROFIT SE SUPONE(!) ESTAMOS EN ELLO
         //falta sacar el texto de los editText
 
-        val context = this
-        val loginCall = ClienteRetrofit.apiRetroFit.login(Usuario("gga@gmail.com", "12345"))
 
-        loginCall.enqueue(object : Callback<Token> {
-            override fun onFailure(call: Call<Token>, t: Throwable) {
-                Log.d("respuesta: onFailure", t.toString())
-            }
-
-            override fun onResponse(call: Call<Token>, response: Response<Token>) {
-                Log.d("respuesta: onResponse", response.toString())
-                val intent=Intent(this@MainActivity,ListaPeliculasActivity::class.java)
-                startActivity(intent)
-              if (response.code() > 299 || response.code() < 200) {
-                    // Muestro alerta: no se ha podido crear el usuario
-                    Toast.makeText(context, "No se ha podido crear el usuario", Toast.LENGTH_SHORT)
-                        .show()
-                } else {
-                    val token = response.body()?.token
-                    Log.d("respuesta: token:", token.orEmpty())
-                    val intent=Intent(this@MainActivity,ListaPeliculasActivity::class.java)
-                    Toast.makeText(context,"Se ha creado el usuario",Toast.LENGTH_SHORT)
-                        .show()
-
-
-                    // TODO: Guardo en sharedPreferences el token
-
-                    // TODO: Inicio nueva activity
-                }
-            }
-        })
     }
 }
 

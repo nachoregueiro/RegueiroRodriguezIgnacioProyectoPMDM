@@ -19,6 +19,12 @@ interface Api {
     @GET("movies")
     fun getPeliculas(@Header("Authorization")token: String): Call<List<Pelicula>>
 
+    @GET("movies")
+    fun getAll(@Header("Authorization:") token:String): Call<List<Pelicula>>
+
+
+    @POST("movies/")
+    fun create(@Body pelicula: Pelicula, @Header("Authorization")token: String ): Call<Unit>
     /*
         TODO:declarar los métodos siguiendo la documentación
      */

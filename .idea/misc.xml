@@ -56,6 +56,7 @@
         <entry key="..\:/Users/regrodign/AndroidStudioProjects/RegueiroRodriguezIgnacioProyectoPMDM3/app/src/main/res/drawable/ic_launcher_background.xml" value="0.22135416666666666" />
         <entry key="..\:/Users/regrodign/AndroidStudioProjects/RegueiroRodriguezIgnacioProyectoPMDM3/app/src/main/res/drawable/ojos2.xml" value="0.3828125" />
         <entry key="..\:/Users/regrodign/AndroidStudioProjects/RegueiroRodriguezIgnacioProyectoPMDM3/app/src/main/res/drawable/papelera.xml" value="0.22135416666666666" />
+        <entry key="..\:/Users/regrodign/AndroidStudioProjects/RegueiroRodriguezIgnacioProyectoPMDM3/app/src/main/res/layout-v31/activity_detalle_pelicula.xml" value="0.19635416666666666" />
         <entry key="..\:/Users/regrodign/AndroidStudioProjects/RegueiroRodriguezIgnacioProyectoPMDM3/app/src/main/res/layout/activity_detalle_pelicula.xml" value="0.5" />
         <entry key="..\:/Users/regrodign/AndroidStudioProjects/RegueiroRodriguezIgnacioProyectoPMDM3/app/src/main/res/layout/activity_edicion.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/regrodign/AndroidStudioProjects/RegueiroRodriguezIgnacioProyectoPMDM3/app/src/main/res/layout/activity_formulario_pelicula.xml" value="0.36666666666666664" />
@@ -66,6 +67,7 @@
         <entry key="..\:/Users/regrodign/AndroidStudioProjects/RegueiroRodriguezIgnacioProyectoPMDM3/app/src/main/res/layout/item_pelicula.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/regrodign/AndroidStudioProjects/RegueiroRodriguezIgnacioProyectoPMDM3/app/src/main/res/menu/menu_borrar.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/regrodign/AndroidStudioProjects/RegueiroRodriguezIgnacioProyectoPMDM3/app/src/main/res/menu/menu_detalle_personaje.xml" value="0.20520833333333333" />
+        <entry key="..\:/Users/regrodign/AndroidStudioProjects/RegueiroRodriguezIgnacioProyectoPMDM3/app/src/main/res/menu/menu_edicion.xml" value="0.19635416666666666" />
         <entry key="..\:/Users/regrodign/AndroidStudioProjects/RegueiroRodriguezIgnacioProyectoPMDM3/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.3828125" />
       </map>
     </option>

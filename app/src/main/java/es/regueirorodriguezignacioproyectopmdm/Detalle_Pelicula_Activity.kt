@@ -67,8 +67,6 @@ class Detalle_Pelicula_Activity : AppCompatActivity() {
             };
         }
 
-
-
         val actionBar = actionBar
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
 

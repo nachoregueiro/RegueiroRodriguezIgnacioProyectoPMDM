@@ -10,6 +10,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.Button
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.textfield.TextInputEditText
@@ -27,6 +28,7 @@ class Formulario_Pelicula : AppCompatActivity() {
     private lateinit var tveAño: TextInputEditText
     private lateinit var tveNota: TextInputEditText
     private lateinit var tveUrl: TextInputEditText
+    private lateinit var boton: Button
 
     private lateinit var pelicula1: Pelicula
 
@@ -41,7 +43,7 @@ class Formulario_Pelicula : AppCompatActivity() {
         tveAño = findViewById<TextInputEditText>(R.id.tveAño)
         tveNota = findViewById<TextInputEditText>(R.id.tveNota)
         tveUrl = findViewById<TextInputEditText>(R.id.tveUrl)
-
+        boton = findViewById<Button>(R.Id.)
 
     /*    val context = this
         val llamadaApi: Call<List<Pelicula>> =
@@ -96,25 +98,14 @@ class Formulario_Pelicula : AppCompatActivity() {
 
 
                     override fun onFailure(call: Call<Unit>, t: Throwable) {
-                        TODO("Not yet implemented")
+                        Toast.makeText(context, "Nacho calla que queda poco tiempo, pesao", Toast.LENGTH_SHORT).show()
+
                     }
 
                     override fun onResponse(call: Call<Unit>, response: Response<Unit>) {
-                        Toast.makeText(context, "chupate un huevo", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(context, "correct", Toast.LENGTH_SHORT).show()
                     }
                 })
-
-
-
-
-
-
-
-
-
-
-
-
 
                 return true
 

@@ -62,7 +62,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.538"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvActor" />
+        app:layout_constraintTop_toBottomOf="@+id/tvDuración" />
 
     <TextView
         android:id="@+id/tvDirector"
@@ -75,7 +75,7 @@
         tools:layout_editor_absoluteY="449dp" />
 
     <TextView
-        android:id="@+id/tvActor"
+        android:id="@+id/tvDuración"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
@@ -90,7 +90,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Género:"
-        app:layout_constraintEnd_toStartOf="@+id/tvActor"
+        app:layout_constraintEnd_toStartOf="@+id/tvDuración"
         app:layout_constraintHorizontal_bias="0.794"
         app:layout_constraintStart_toStartOf="parent"
         tools:layout_editor_absoluteY="500dp"

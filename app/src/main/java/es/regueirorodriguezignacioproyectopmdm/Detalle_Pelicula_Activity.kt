@@ -2,14 +2,11 @@ package es.regueirorodriguezignacioproyectopmdm
 
 import Dao.retrofit.ClienteRetrofit
 import Dao.retrofit.Usuario
-import Dao.retrofit.entities.Token
 import android.app.AlertDialog
-import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Button
@@ -19,9 +16,6 @@ import android.widget.Toast
 import com.squareup.picasso.Picasso
 import entities.Pelicula
 import es.regueirorodriguezignacioproyectopmdm.App.Companion.peliculas
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
 import java.lang.Exception
 
 class Detalle_Pelicula_Activity : AppCompatActivity() {
@@ -40,7 +34,7 @@ class Detalle_Pelicula_Activity : AppCompatActivity() {
         //declaración elementos
         val tvTitulo = findViewById<TextView>(R.id.tveTitulo)
         val tvDirector = findViewById<TextView>(R.id.tvDirector)
-        val tvActor = findViewById<TextView>(R.id.tveActor)
+        val tvDuracion = findViewById<TextView>(R.id.tveDuración)
         val tvNota = findViewById<TextView>(R.id.tvNota)
         val tvAño = findViewById<TextView>(R.id.tvAnho)
         val tvGenero = findViewById<TextView>(R.id.tvGenero)
@@ -50,7 +44,7 @@ class Detalle_Pelicula_Activity : AppCompatActivity() {
         //visualización elementos
         tvTitulo.setText(pelicula1.titulo)
         tvDirector.setText(pelicula1.director)
-        tvActor.setText(pelicula1.actor)
+        tvDuracion.setText(pelicula1.duracion)
         tvNota.setText(pelicula1.nota)
         tvGenero.setText(pelicula1.genero)
         tvAño.setText(pelicula1.año)

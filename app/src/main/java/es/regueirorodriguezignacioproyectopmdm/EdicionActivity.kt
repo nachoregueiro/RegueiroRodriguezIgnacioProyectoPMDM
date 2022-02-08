@@ -39,7 +39,7 @@ class EdicionActivity : AppCompatActivity() {
         pelicula=intent.extras?.get("Pelicula") as Pelicula
         binding.etTitulo.setText(pelicula.titulo)
         binding.etUsuario.setText(pelicula.director)
-        binding.etActor.setText(pelicula.actor)
+        binding.etActor.setText(pelicula.duracion)
         binding.etNota.setText(pelicula.nota)
         binding.etUrl.setText(pelicula.url)
         binding.etGenero.setText(pelicula.genero)

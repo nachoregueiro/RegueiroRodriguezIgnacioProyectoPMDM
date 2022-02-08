@@ -22,7 +22,6 @@ interface Api {
     @GET("movies")
     fun getAll(@Header("Authorization:") token:String): Call<List<Pelicula>>
 
-
     @POST("movies/")
     fun create(@Body pelicula: Pelicula, @Header("Authorization")token: String ): Call<Unit>
     /*

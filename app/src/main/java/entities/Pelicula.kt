@@ -6,7 +6,7 @@ import java.io.Serializable
 data class Pelicula(
     @SerializedName("title") var titulo:String,
     @SerializedName("directorLastname") var director:String,
-    var actor:String,
+    @SerializedName("runtimeMinutes") var duracion:String,
     @SerializedName("rating") var nota:String,
     @SerializedName("genre") var genero:String,
     @SerializedName("releaseYear")var año:String,

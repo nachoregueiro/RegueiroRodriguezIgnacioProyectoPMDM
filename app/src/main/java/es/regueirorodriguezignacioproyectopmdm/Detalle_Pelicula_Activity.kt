@@ -52,14 +52,14 @@ class Detalle_Pelicula_Activity : AppCompatActivity() {
         //error al cargar la foto
 
 
-        if (!pelicula1.url.equals("")) {
+    /*    if (!pelicula1.url.equals("")) {
             try {
                 Picasso.get()
                     .load("https://sercide.com/wp-content/themes/consultix/images/no-image-found-360x260.png")
             } catch (e: Exception) {
                 Toast.makeText(getApplicationContext(), "NO IMAGEN", Toast.LENGTH_SHORT).show()
             };
-        }
+        }*/
 
         val actionBar = actionBar
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)

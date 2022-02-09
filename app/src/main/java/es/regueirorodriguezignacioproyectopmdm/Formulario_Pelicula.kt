@@ -28,7 +28,7 @@ class Formulario_Pelicula : AppCompatActivity() {
     private lateinit var tveAño: TextInputEditText
     private lateinit var tveNota: TextInputEditText
     private lateinit var tveUrl: TextInputEditText
-    private lateinit var boton: Button
+    private lateinit var tveDuracion: TextInputEditText
 
     private lateinit var pelicula1: Pelicula
 
@@ -42,8 +42,8 @@ class Formulario_Pelicula : AppCompatActivity() {
         tvDirector = findViewById<TextInputEditText>(R.id.tveDirector)
         tveAño = findViewById<TextInputEditText>(R.id.tveAño)
         tveNota = findViewById<TextInputEditText>(R.id.tveNota)
+        tveDuracion = findViewById<TextInputEditText>(R.id.tveDuración)
         tveUrl = findViewById<TextInputEditText>(R.id.tveUrl)
-        boton = findViewById<Button>(R.Id.)
 
     /*    val context = this
         val llamadaApi: Call<List<Pelicula>> =
@@ -77,51 +77,44 @@ class Formulario_Pelicula : AppCompatActivity() {
         return when (item.itemId) {
             R.id.check -> {
                 val titulo = tveTitulo.text.toString()
-                val actor = tveGenero.text.toString()
+                val duracion = tveDuracion.text.toString()
                 val director = tvDirector.text.toString()
                 val nota = tveNota.text.toString()
                 val genero = tveGenero.text.toString()
                 val año = tveAño.text.toString()
                 //El problema era de imagen Como una imagen aqui que no está por defecto es decir la ruta?
                 val url = tveUrl.text.toString()
-                peliculas.add(Pelicula(titulo, director, actor, nota, genero, año, url))
-                Toast.makeText(this, "Pelicula añadida correctamente", Toast.LENGTH_SHORT).show()
+
+                peliculas.add(Pelicula(titulo, director, duracion, nota, genero, año, url))
+
                 finish()
 
 
-
                 val context = this
-                val llamadaApi: Call<Unit> = ClienteRetrofit.apiRetroFit.create(Pelicula(titulo,director,actor,nota,genero,año,url),"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxZjdhMmE2ODgxM2Q2ZTRlNDVmZWQ4MiIsImlhdCI6MTY0NDMwODAyOSwiZXhwIjoxNjQ0Mzk0NDI5fQ.Fk1ANBsuD_QiJYUvJbdI9uBzTDrGypZaFVRPg1tH7Ow")
+                val llamadaApi: Call<Unit> = ClienteRetrofit.apiRetroFit.create(Pelicula(titulo,director,duracion,nota,genero,año,url),"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxZjdhMmE2ODgxM2Q2ZTRlNDVmZWQ4MiIsImlhdCI6MTY0NDQwNTE5MywiZXhwIjoxNjQ0NDkxNTkzfQ.9i4sBtozuYBGjVk_YxnhgndSB_jgBHlBj7ckhuL3a9A")
 
 
                 llamadaApi.enqueue(object : Callback<Unit> {
 
 
                     override fun onFailure(call: Call<Unit>, t: Throwable) {
-                        Toast.makeText(context, "Nacho calla que queda poco tiempo, pesao", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(context, "Error", Toast.LENGTH_SHORT).show()
 
                     }
 
                     override fun onResponse(call: Call<Unit>, response: Response<Unit>) {
-                        Toast.makeText(context, "correct", Toast.LENGTH_SHORT).show()
+                      if (response.isSuccessful){
+
+                          Toast.makeText(context, "Correcto", Toast.LENGTH_SHORT).show()
+
+                      }else{
+                          Toast.makeText(context, "Error", Toast.LENGTH_SHORT).show()
+                      }
+
                     }
                 })
 
                 return true
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
             }
             //Para editar
@@ -148,6 +141,10 @@ class Formulario_Pelicula : AppCompatActivity() {
             else -> super.onOptionsItemSelected(item)
         }
 
+    }
 
+
+    override fun onResume() {
+        super.onResume()
     }
 }

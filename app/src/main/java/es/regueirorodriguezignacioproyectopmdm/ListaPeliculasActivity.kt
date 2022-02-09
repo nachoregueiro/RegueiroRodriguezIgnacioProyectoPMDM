@@ -92,7 +92,7 @@ class ListaPeliculasActivity : AppCompatActivity() {
 
        // val token=pref.sacarToken()
 
-        val llamadaApi = ClienteRetrofit.apiRetroFit.getAll("Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxZjdhMmE2ODgxM2Q2ZTRlNDVmZWQ4MiIsImlhdCI6MTY0NDMwODAyOSwiZXhwIjoxNjQ0Mzk0NDI5fQ.Fk1ANBsuD_QiJYUvJbdI9uBzTDrGypZaFVRPg1tH7Ow" ) //Llamamos a Retrofit
+        val llamadaApi = ClienteRetrofit.apiRetroFit.getAll("Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxZjdhMmE2ODgxM2Q2ZTRlNDVmZWQ4MiIsImlhdCI6MTY0NDQwNTE5MywiZXhwIjoxNjQ0NDkxNTkzfQ.9i4sBtozuYBGjVk_YxnhgndSB_jgBHlBj7ckhuL3a9A" ) //Llamamos a Retrofit
 
 
         llamadaApi.enqueue(object : Callback<List<Pelicula>> {

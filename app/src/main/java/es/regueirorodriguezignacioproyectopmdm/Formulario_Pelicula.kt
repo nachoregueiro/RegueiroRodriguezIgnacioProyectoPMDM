@@ -85,13 +85,13 @@ class Formulario_Pelicula : AppCompatActivity() {
                 //El problema era de imagen Como una imagen aqui que no está por defecto es decir la ruta?
                 val url = tveUrl.text.toString()
 
-                peliculas.add(Pelicula(titulo, director, duracion, nota, genero, año, url))
+                peliculas.add(Pelicula(titulo, director, duracion, nota, genero, año, url,null))
 
                 finish()
 
 
                 val context = this
-                val llamadaApi: Call<Unit> = ClienteRetrofit.apiRetroFit.create(Pelicula(titulo,director,duracion,nota,genero,año,url),"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxZjdhMmE2ODgxM2Q2ZTRlNDVmZWQ4MiIsImlhdCI6MTY0NDQwNTE5MywiZXhwIjoxNjQ0NDkxNTkzfQ.9i4sBtozuYBGjVk_YxnhgndSB_jgBHlBj7ckhuL3a9A")
+                val llamadaApi: Call<Unit> = ClienteRetrofit.apiRetroFit.create(Pelicula(titulo,director,duracion,nota,genero,año,url,null),"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxZjdhMmE2ODgxM2Q2ZTRlNDVmZWQ4MiIsImlhdCI6MTY0NDU3MjAwNiwiZXhwIjoxNjQ0NjU4NDA2fQ.3OlGesFV0LfPfizsvd3jAZVM6mpSBZqWZE40EdPWtBs")
 
 
                 llamadaApi.enqueue(object : Callback<Unit> {

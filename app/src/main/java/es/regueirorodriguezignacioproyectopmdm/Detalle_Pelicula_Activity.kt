@@ -2,11 +2,13 @@ package es.regueirorodriguezignacioproyectopmdm
 
 import Dao.retrofit.ClienteRetrofit
 import Dao.retrofit.Usuario
+import Dao.retrofit.entities.Token
 import android.app.AlertDialog
 import android.content.Intent
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Button
@@ -16,6 +18,9 @@ import android.widget.Toast
 import com.squareup.picasso.Picasso
 import entities.Pelicula
 import es.regueirorodriguezignacioproyectopmdm.App.Companion.peliculas
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 import java.lang.Exception
 
 class Detalle_Pelicula_Activity : AppCompatActivity() {
@@ -30,6 +35,7 @@ class Detalle_Pelicula_Activity : AppCompatActivity() {
         setTitle("Detalle de las películas")
 
         pelicula1 = intent.extras?.get("Pelicula") as Pelicula
+
 
         //declaración elementos
         val tvTitulo = findViewById<TextView>(R.id.tveTitulo)
@@ -52,14 +58,14 @@ class Detalle_Pelicula_Activity : AppCompatActivity() {
         //error al cargar la foto
 
 
-    /*    if (!pelicula1.url.equals("")) {
-            try {
-                Picasso.get()
-                    .load("https://sercide.com/wp-content/themes/consultix/images/no-image-found-360x260.png")
-            } catch (e: Exception) {
-                Toast.makeText(getApplicationContext(), "NO IMAGEN", Toast.LENGTH_SHORT).show()
-            };
-        }*/
+        /*    if (!pelicula1.url.equals("")) {
+                try {
+                    Picasso.get()
+                        .load("https://sercide.com/wp-content/themes/consultix/images/no-image-found-360x260.png")
+                } catch (e: Exception) {
+                    Toast.makeText(getApplicationContext(), "NO IMAGEN", Toast.LENGTH_SHORT).show()
+                };
+            }*/
 
         val actionBar = actionBar
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
@@ -107,38 +113,57 @@ class Detalle_Pelicula_Activity : AppCompatActivity() {
             }
         })*/
     }
-            override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-                menuInflater.inflate(R.menu.menu_borrar, menu)
-                return true
-            }
 
-            override fun onOptionsItemSelected(item: MenuItem): Boolean {
-                if (item.itemId == R.id.borrar) {
-                    val builder = AlertDialog.Builder(this)
-                    builder.setTitle("Eliminar pelicula")
-                        .setMessage("La película seleccionada va a ser eliminada, ¿estás seguro?")
-                        .setPositiveButton("Aceptar") { _, _ ->
-                            peliculas.remove(pelicula1)
-                            Toast.makeText(this, "Pelicula eliminada", Toast.LENGTH_SHORT).show()
-                            finish()
-                        }.setNegativeButton("Cancelar", null)
-                        .show()
-                    return true
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.menu_borrar, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+
+        if (item.itemId == R.id.borrar) {
+            val builder = AlertDialog.Builder(this)
+            builder.setTitle("Eliminar pelicula")
+                .setMessage("La película seleccionada va a ser eliminada, ¿estás seguro?")
+                .setPositiveButton("Aceptar") { _, _ ->
+
+                    val llamadaApi: Call<Unit> =
+                        ClienteRetrofit.apiRetroFit.borrar(
+                            "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxZjdhMmE2ODgxM2Q2ZTRlNDVmZWQ4MiIsImlhdCI6MTY0NDU3NjgzOCwiZXhwIjoxNjQ0NjYzMjM4fQ.wvL6ffU1xvoL-0WDrUO0R1MclMEqyOFSxFq2e-D5N5s",
+                            pelicula1.id)
+                    llamadaApi.enqueue(object :Callback<Unit>{
+                        override fun onResponse(call: Call<Unit>, response: Response<Unit>) {
+                        if(response.isSuccessful){
+                            Toast.makeText(this@Detalle_Pelicula_Activity,"Pelicula Borrada",Toast.LENGTH_SHORT)
+                        }
+                        }
+                        override fun onFailure(call: Call<Unit>, t: Throwable) {
+                            TODO("Not yet implemented")
+                        }
+
+                    })
                     finish()
-                } else if (item.itemId == R.id.editar) {
-                    // Iniciar activity de edición
-                    val intent = Intent(this, EdicionActivity::class.java)
-                    intent.putExtra("Pelicula", pelicula1)
-                    //para editar tvTitulo.text = pelicula1.director.toString()
-                    startActivity(intent)
-                } else if (item.itemId == item.itemId) {
-                    onBackPressed()
-                    return true
-                }
 
-                return super.onOptionsItemSelected(item)
-            }
+
+                }.setNegativeButton("Cancelar", null)
+                .show()
+            return true
+            finish()
+
+        } else if (item.itemId == R.id.editar) {
+            // Iniciar activity de edición
+            val intent = Intent(this, EdicionActivity::class.java)
+            intent.putExtra("Pelicula", pelicula1)
+            //para editar tvTitulo.text = pelicula1.director.toString()
+            startActivity(intent)
+        } else if (item.itemId == item.itemId) {
+            onBackPressed()
+            return true
         }
+
+        return super.onOptionsItemSelected(item)
+    }
+}
 
 
 

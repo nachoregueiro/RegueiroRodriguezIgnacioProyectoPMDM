@@ -11,6 +11,7 @@ data class Pelicula(
     @SerializedName("genre") var genero:String,
     @SerializedName("releaseYear")var año:String,
     @SerializedName("imageUrl")var url:String,
-)
+    @SerializedName("id")var id:String?
+    )
     :Serializable
 {}

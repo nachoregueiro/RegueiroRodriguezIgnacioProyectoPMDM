@@ -93,7 +93,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/tiAño"
+        android:id="@+id/tDuración"
         android:layout_width="313dp"
         android:layout_height="43dp"
         android:layout_marginTop="32dp"
@@ -102,10 +102,10 @@
         app:layout_constraintTop_toBottomOf="@+id/tiGenero">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/etAño"
+            android:id="@+id/etDuración"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:hint="Año:" />
+            android:hint="Duración:" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -115,7 +115,7 @@
         android:layout_marginTop="24dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tiAño">
+        app:layout_constraintTop_toBottomOf="@+id/tDuración">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/etTitulo"

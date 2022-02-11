@@ -39,7 +39,7 @@ class ListaPeliculasActivity : AppCompatActivity() {
 
 
         val context=this
-        val llamadaApi:Call<List<Pelicula>> = ClienteRetrofit.apiRetroFit.getPeliculas("Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxZjdhMmE2ODgxM2Q2ZTRlNDVmZWQ4MiIsImlhdCI6MTY0NDMwODAyOSwiZXhwIjoxNjQ0Mzk0NDI5fQ.Fk1ANBsuD_QiJYUvJbdI9uBzTDrGypZaFVRPg1tH7Ow")
+        val llamadaApi:Call<List<Pelicula>> = ClienteRetrofit.apiRetroFit.getPeliculas("Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxZjdhMmE2ODgxM2Q2ZTRlNDVmZWQ4MiIsImlhdCI6MTY0NDU3MjAwNiwiZXhwIjoxNjQ0NjU4NDA2fQ.3OlGesFV0LfPfizsvd3jAZVM6mpSBZqWZE40EdPWtBs")
 
         llamadaApi.enqueue(object :Callback<List<Pelicula>> {
             override fun onResponse(call: Call<List<Pelicula>>,
@@ -57,12 +57,6 @@ class ListaPeliculasActivity : AppCompatActivity() {
 //                binding.rvPeliculasList.adapter = adapter
 //                var adapter=PeliculasListaAdapter(listaPelicula, this@ListaPeliculasActivity)
 //                rvPeliculasAdapter.adapter=adapter
-
-
-
-                Toast.makeText(context,"Prueba",Toast.LENGTH_SHORT).show()
-
-
 
 
             }
@@ -92,7 +86,7 @@ class ListaPeliculasActivity : AppCompatActivity() {
 
        // val token=pref.sacarToken()
 
-        val llamadaApi = ClienteRetrofit.apiRetroFit.getAll("Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxZjdhMmE2ODgxM2Q2ZTRlNDVmZWQ4MiIsImlhdCI6MTY0NDQwNTE5MywiZXhwIjoxNjQ0NDkxNTkzfQ.9i4sBtozuYBGjVk_YxnhgndSB_jgBHlBj7ckhuL3a9A" ) //Llamamos a Retrofit
+        val llamadaApi = ClienteRetrofit.apiRetroFit.getAll("Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxZjdhMmE2ODgxM2Q2ZTRlNDVmZWQ4MiIsImlhdCI6MTY0NDU3MjAwNiwiZXhwIjoxNjQ0NjU4NDA2fQ.3OlGesFV0LfPfizsvd3jAZVM6mpSBZqWZE40EdPWtBs" ) //Llamamos a Retrofit
 
 
         llamadaApi.enqueue(object : Callback<List<Pelicula>> {

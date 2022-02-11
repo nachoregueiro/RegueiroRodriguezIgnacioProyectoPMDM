@@ -9,6 +9,7 @@ class PeliculasDaoMock : PeliculasDao {
         val lista = ArrayList<Pelicula>()
         lista.addAll(
             mutableListOf(
+                /*
                 Pelicula(
                     "Interstellar",
                     "Cristopher Nolan",
@@ -46,7 +47,9 @@ class PeliculasDaoMock : PeliculasDao {
                     "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/2iuVrtC5IpwLtSFSgkIIIKLs0Zq.jpg"
                 )
             )
+        )*/
+
+         return lista)
         )
-        return lista
     }
 }

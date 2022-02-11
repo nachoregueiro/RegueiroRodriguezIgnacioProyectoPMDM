@@ -43,7 +43,7 @@ class EdicionActivity : AppCompatActivity() {
         binding.etNota.setText(pelicula.nota)
         binding.etUrl.setText(pelicula.url)
         binding.etGenero.setText(pelicula.genero)
-        binding.etAO.setText(pelicula.año)
+        binding.etDuraciN.setText(pelicula.duracion)
 
   /*      val context = this
         val llamadaApi: Call<List<Pelicula>> =
@@ -79,18 +79,34 @@ class EdicionActivity : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         if(item.itemId==R.id.anhadir){
-            peliculas.remove(pelicula)
-            val ePrDirector=binding.etUsuario.text.toString()
-            val ePrActor= binding.etActor.text.toString()
+          /*  pelicula.director=binding.etUsuario.text.toString()
+            pelicula. binding.et.text.toString()
             val ePrNota=binding.etNota.text.toString()
             val ePrUrl=binding.etUrl.text.toString()
             val ePrTitulo=binding.etTitulo.text.toString()
             val ePrGenero=binding.etGenero.text.toString()
-            val ePrAño=binding.etAO.text.toString()
-            val pel=Pelicula(ePrTitulo, ePrDirector, ePrActor, ePrNota, ePrGenero,ePrAño,ePrUrl)
-            peliculas.add(pel)
-            Toast.makeText(this,"la pelicula se ha actualizado correctamente",Toast.LENGTH_SHORT).show()
-            finish()
+            val ePrAño=binding.etAO.text.toString()*/
+            pelicula.director=binding.etUsuario.text.toString()
+            pelicula.titulo=binding.etTitulo.text.toString()
+            pelicula.duracion=binding.etDuraciN.text.toString()
+            pelicula.nota=binding.etNota.text.toString()
+            pelicula.url=binding.etUrl.text.toString()
+
+
+            val retrofit=ClienteRetrofit.apiRetroFit.update(pelicula,"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxZjdhMmE2ODgxM2Q2ZTRlNDVmZWQ4MiIsImlhdCI6MTY0NDU3NzQxNiwiZXhwIjoxNjQ0NjYzODE2fQ.gNeGE_YiPK4UclZ_DW4EhIhvCd9gElE4xs1KyKn7dqw")
+
+            retrofit.enqueue(object :Callback<Unit>{
+                override fun onResponse(call: Call<Unit>, response: Response<Unit>) {
+                    if(response.isSuccessful){
+                        Toast.makeText(this@EdicionActivity,"Pelicula Actualizada correctamente",Toast.LENGTH_SHORT).show()
+                        finish()
+                    }
+                }
+                override fun onFailure(call: Call<Unit>, t: Throwable) {
+                    TODO("Not yet implemented")
+                }
+
+            })
         }
         if(item.itemId==item.itemId){
             onBackPressed()

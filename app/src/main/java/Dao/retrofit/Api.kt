@@ -3,10 +3,7 @@ package Dao.retrofit
 import Dao.retrofit.entities.Token
 import entities.Pelicula
 import retrofit2.Call
-import retrofit2.http.Body
-import retrofit2.http.GET
-import retrofit2.http.Header
-import retrofit2.http.POST
+import retrofit2.http.*
 
 interface Api {
 
@@ -19,13 +16,20 @@ interface Api {
     @GET("movies")
     fun getPeliculas(@Header("Authorization")token: String): Call<List<Pelicula>>
 
+    @GET("movies/{id}")
+    fun getId(@Header("Authorization")token: String, @Path("id")id:String?): Call<Pelicula>
+
     @GET("movies")
     fun getAll(@Header("Authorization:") token:String): Call<List<Pelicula>>
 
     @POST("movies/")
     fun create(@Body pelicula: Pelicula, @Header("Authorization")token: String ): Call<Unit>
-    /*
-        TODO:declarar los métodos siguiendo la documentación
-     */
+
+    @PUT("movies/")
+    fun update(@Body pelicula: Pelicula, @Header("Authorization")token: String ): Call<Unit>
+
+    @DELETE("movies/{id}")
+    fun borrar(@Header("Authorization")token: String,@Path("id")id:String?):Call<Unit>
+
 
 }

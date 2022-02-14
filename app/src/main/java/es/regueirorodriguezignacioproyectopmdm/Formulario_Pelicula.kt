@@ -36,7 +36,6 @@ class Formulario_Pelicula : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_formulario_pelicula)
 
-        //Formulario detalle peliculas
         tveTitulo = findViewById(R.id.tveTitulo)
         tveGenero = findViewById<TextInputEditText>(R.id.tveGénero)
         tvDirector = findViewById<TextInputEditText>(R.id.tveDirector)
@@ -44,27 +43,6 @@ class Formulario_Pelicula : AppCompatActivity() {
         tveNota = findViewById<TextInputEditText>(R.id.tveNota)
         tveDuracion = findViewById<TextInputEditText>(R.id.tveDuración)
         tveUrl = findViewById<TextInputEditText>(R.id.tveUrl)
-
-    /*    val context = this
-        val llamadaApi: Call<List<Pelicula>> =
-            ClienteRetrofit.apiRetroFit.getPeliculas("Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxZjdhMmE2ODgxM2Q2ZTRlNDVmZWQ4MiIsImlhdCI6MTY0Mzk2NzUwNywiZXhwIjoxNjQ0MDUzOTA3fQ.vynx3nsnb8X204_zvPwUK7KVVBFM5E-yNv9iNz4_m04")
-
-        llamadaApi.enqueue(object : Callback<List<Pelicula>> {
-            override fun onResponse(
-                call: Call<List<Pelicula>>,
-                response: Response<List<Pelicula>>
-            ) {
-                var respon = response.body()
-                Toast.makeText(context, "", Toast.LENGTH_SHORT).show()
-                //actualizar el adapter
-                binding.rvPeliculasList.adapter = adapter
-            }
-            override fun onFailure(call: Call<List<Pelicula>>, t: Throwable) {
-                Log.d("Error", t.message.toString())
-            }
-        }
-        )
-*/
 
     }
 
@@ -75,6 +53,7 @@ class Formulario_Pelicula : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
+            //Para añadir una pelicula
             R.id.check -> {
                 val titulo = tveTitulo.text.toString()
                 val duracion = tveDuracion.text.toString()
@@ -82,20 +61,19 @@ class Formulario_Pelicula : AppCompatActivity() {
                 val nota = tveNota.text.toString()
                 val genero = tveGenero.text.toString()
                 val año = tveAño.text.toString()
-                //El problema era de imagen Como una imagen aqui que no está por defecto es decir la ruta?
                 val url = tveUrl.text.toString()
 
                 peliculas.add(Pelicula(titulo, director, duracion, nota, genero, año, url,null))
 
                 finish()
 
-
+                val sharedPreferences = getSharedPreferences("sharedPrefs", MODE_PRIVATE)
+                val Token: String ="Bearer "+ sharedPreferences.getString("TOKEN", null)
                 val context = this
-                val llamadaApi: Call<Unit> = ClienteRetrofit.apiRetroFit.create(Pelicula(titulo,director,duracion,nota,genero,año,url,null),"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxZjdhMmE2ODgxM2Q2ZTRlNDVmZWQ4MiIsImlhdCI6MTY0NDU3MjAwNiwiZXhwIjoxNjQ0NjU4NDA2fQ.3OlGesFV0LfPfizsvd3jAZVM6mpSBZqWZE40EdPWtBs")
+                val llamadaApi: Call<Unit> = ClienteRetrofit.apiRetroFit.create(Pelicula(titulo,director,duracion,nota,genero,año,url,null),Token)
 
 
                 llamadaApi.enqueue(object : Callback<Unit> {
-
 
                     override fun onFailure(call: Call<Unit>, t: Throwable) {
                         Toast.makeText(context, "Error", Toast.LENGTH_SHORT).show()
@@ -103,13 +81,13 @@ class Formulario_Pelicula : AppCompatActivity() {
                     }
 
                     override fun onResponse(call: Call<Unit>, response: Response<Unit>) {
-                      if (response.isSuccessful){
+                        if (response.isSuccessful){
 
-                          Toast.makeText(context, "Correcto", Toast.LENGTH_SHORT).show()
+                            Toast.makeText(context, "Correcto", Toast.LENGTH_SHORT).show()
 
-                      }else{
-                          Toast.makeText(context, "Error", Toast.LENGTH_SHORT).show()
-                      }
+                        }else{
+                            Toast.makeText(context, "Error", Toast.LENGTH_SHORT).show()
+                        }
 
                     }
                 })

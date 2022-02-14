@@ -58,17 +58,22 @@
         android:layout_marginStart="10dp"
         android:layout_marginTop="32dp"
         android:layout_marginEnd="10dp"
+        android:visibility="visible"
         app:boxBackgroundColor="@android:color/transparent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tiUsuario"
-        app:startIconDrawable="@drawable/cerrado">
+        app:startIconDrawable="@drawable/cerrado"
+        tools:visibility="visible">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/etContraseña"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:hint="Introduce contraseña:" />
+            android:hint="Introduce contraseña:"
+            android:inputType="textPassword"
+            android:visibility="visible"
+            tools:visibility="invisible" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button

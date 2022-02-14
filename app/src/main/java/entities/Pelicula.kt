@@ -4,6 +4,7 @@ import com.google.gson.annotations.SerializedName
 import java.io.Serializable
 
 data class Pelicula(
+    //Clase pelicula con los distintos elementos
     @SerializedName("title") var titulo:String,
     @SerializedName("directorLastname") var director:String,
     @SerializedName("runtimeMinutes") var duracion:String,

@@ -10,6 +10,7 @@ class PeliculasDaoMock : PeliculasDao {
         lista.addAll(
             mutableListOf(
                 /*
+                Lista de peliculas introducidas a mano
                 Pelicula(
                     "Interstellar",
                     "Cristopher Nolan",

@@ -26,8 +26,8 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/tiTextoActor"
-        android:layout_width="334dp"
-        android:layout_height="43dp"
+        android:layout_width="336dp"
+        android:layout_height="61dp"
         android:layout_marginStart="40dp"
         android:layout_marginTop="32dp"
         android:layout_marginEnd="40dp"
@@ -45,9 +45,9 @@
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/tiTextoNota"
         android:layout_width="331dp"
-        android:layout_height="41dp"
+        android:layout_height="56dp"
         android:layout_marginStart="40dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="32dp"
         android:layout_marginEnd="40dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -62,8 +62,8 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/tiUrl"
-        android:layout_width="323dp"
-        android:layout_height="54dp"
+        android:layout_width="328dp"
+        android:layout_height="67dp"
         android:layout_marginTop="32dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -78,9 +78,9 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/tiGenero"
-        android:layout_width="311dp"
-        android:layout_height="39dp"
-        android:layout_marginTop="24dp"
+        android:layout_width="321dp"
+        android:layout_height="75dp"
+        android:layout_marginTop="32dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tiUrl">
@@ -94,8 +94,8 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/tDuración"
-        android:layout_width="313dp"
-        android:layout_height="43dp"
+        android:layout_width="320dp"
+        android:layout_height="67dp"
         android:layout_marginTop="32dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -110,9 +110,9 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/tiTitulo"
-        android:layout_width="317dp"
-        android:layout_height="51dp"
-        android:layout_marginTop="24dp"
+        android:layout_width="319dp"
+        android:layout_height="69dp"
+        android:layout_marginTop="30dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tDuración">

@@ -30,61 +30,68 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        val context = this
+
+        val sharedPreferences = getSharedPreferences("sharedPrefs", MODE_PRIVATE)
+        val Token: String? = sharedPreferences.getString("TOKEN", null)
+
+        //Comprobamos si el token está vacio
+        if (Token == null){
+            binding.btEntrar.setOnClickListener() {
+                acceder()
+            }
+        }else{
+            val intent = Intent(context, ListaPeliculasActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
 
 
-
+        //Para entrar en la lista recibe la función
         binding.btEntrar.setOnClickListener {
-
-            val context = this
-            val loginCall = ClienteRetrofit.apiRetroFit.login(Usuario("gga@gmail.com", "12345"))
-
-            loginCall.enqueue(object : Callback<Token> {
-                override fun onFailure(call: Call<Token>, t: Throwable) {
-                    Log.d("respuesta: onFailure", t.toString())
-                }
-
-                override fun onResponse(call: Call<Token>, response: Response<Token>) {
-                    Log.d("respuesta: onResponse", response.toString())
-                    if (response.code() > 299 || response.code() < 200) {
-                        // Muestro alerta: no se ha podido crear el usuario
-                        Toast.makeText(context, "No se ha podido crear el usuario", Toast.LENGTH_SHORT)
-                            .show()
-                    } else {
-                        val token = response.body()?.token
-                        Log.d("respuesta: token:", token.orEmpty())
-                        Toast.makeText(context, "Se ha creado el usuario", Toast.LENGTH_SHORT)
-                            .show()
-                        val intent = Intent(this@MainActivity, ListaPeliculasActivity::class.java)
-                        startActivity(intent)
-
-
-                        // TODO: Guardo en sharedPreferences el token
-
-                        // TODO: Inicio nueva activity
-                    }
-                }
-            })
-
+            acceder()
         }
         binding.btRegistro.setOnClickListener {
             val intent = Intent(this@MainActivity, RegistroActivity::class.java)
             startActivity(intent)
         }
-/*
-        usuario=findViewById(R.id.tiUsuario)
-        contrasenha=findViewById(R.id.etContraseña)
-        botonEntrar=findViewById(R.id.btEntrar)
-*/
-        //HACE LO DE RETROFIT SE SUPONE(!) ESTAMOS EN ELLO
-        //falta sacar el texto de los editText
-
 
     }
+
+    //Función para comprobar si se puede registrar el usuario o no
+    fun acceder() {
+        val context = this
+        var usuario = binding.etUsuario.text.toString()
+        var contraseña = binding.etContraseA.text.toString()
+        val u = Usuario(usuario, contraseña)
+        val llamadaApi: Call<Token> = ClienteRetrofit.apiRetroFit.login(u)
+
+        llamadaApi.enqueue(object : Callback<Token> {
+            override fun onFailure(call: Call<Token>, t: Throwable) {
+                Log.d("respuesta: onFailure", t.toString())
+            }
+
+            override fun onResponse(call: Call<Token>, response: Response<Token>) {
+                Log.d("respuesta: onResponse", response.toString())
+
+                if (response.code() > 299 || response.code() < 200) {
+                    Toast.makeText(context, "Error,no se pudo entrar", Toast.LENGTH_SHORT).show()
+
+                } else {
+                    val token: String? = response.body()?.token
+                    val sharedPreferences = getSharedPreferences("sharedPrefs", MODE_PRIVATE)
+                    val editor = sharedPreferences.edit()
+                    editor.apply() {
+                        putString("TOKEN", token)
+                    }.apply()
+                    val intent = Intent(context, ListaPeliculasActivity::class.java)
+                    startActivity(intent)
+                    finish()
+                }
+            }
+        })
+    }
+
 }
-
-
-
-
-
 
 

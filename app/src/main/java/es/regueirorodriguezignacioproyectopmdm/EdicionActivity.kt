@@ -1,6 +1,7 @@
 package es.regueirorodriguezignacioproyectopmdm
 
 import Dao.retrofit.ClienteRetrofit
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.system.Os.remove
@@ -45,29 +46,6 @@ class EdicionActivity : AppCompatActivity() {
         binding.etGenero.setText(pelicula.genero)
         binding.etDuraciN.setText(pelicula.duracion)
 
-  /*      val context = this
-        val llamadaApi: Call<List<Pelicula>> =
-            ClienteRetrofit.apiRetroFit.getPeliculas("Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxZjdhMmE2ODgxM2Q2ZTRlNDVmZWQ4MiIsImlhdCI6MTY0Mzk2NzUwNywiZXhwIjoxNjQ0MDUzOTA3fQ.vynx3nsnb8X204_zvPwUK7KVVBFM5E-yNv9iNz4_m04")
-
-
-        llamadaApi.enqueue(object : Callback<List<Pelicula>> {
-            override fun onResponse(
-                call: Call<List<Pelicula>>,
-                response: Response<List<Pelicula>>
-            ) {
-
-                var respon = response.body()
-                Toast.makeText(context, "", Toast.LENGTH_SHORT).show()
-                //actualizar el adapter
-                binding.rvPeliculasList.adapter = adapter
-
-            }
-
-            override fun onFailure(call: Call<List<Pelicula>>, t: Throwable) {
-                Log.d("Error", t.message.toString())
-            }
-        }
-        )*/
 
     }
 
@@ -78,40 +56,73 @@ class EdicionActivity : AppCompatActivity() {
 
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        //Para añadir dentro recibe la función
         if(item.itemId==R.id.anhadir){
-          /*  pelicula.director=binding.etUsuario.text.toString()
-            pelicula. binding.et.text.toString()
-            val ePrNota=binding.etNota.text.toString()
-            val ePrUrl=binding.etUrl.text.toString()
-            val ePrTitulo=binding.etTitulo.text.toString()
-            val ePrGenero=binding.etGenero.text.toString()
-            val ePrAño=binding.etAO.text.toString()*/
-            pelicula.director=binding.etUsuario.text.toString()
-            pelicula.titulo=binding.etTitulo.text.toString()
-            pelicula.duracion=binding.etDuraciN.text.toString()
-            pelicula.nota=binding.etNota.text.toString()
-            pelicula.url=binding.etUrl.text.toString()
 
+            añadir()
+            finish()
 
-            val retrofit=ClienteRetrofit.apiRetroFit.update(pelicula,"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxZjdhMmE2ODgxM2Q2ZTRlNDVmZWQ4MiIsImlhdCI6MTY0NDU3NzQxNiwiZXhwIjoxNjQ0NjYzODE2fQ.gNeGE_YiPK4UclZ_DW4EhIhvCd9gElE4xs1KyKn7dqw")
-
-            retrofit.enqueue(object :Callback<Unit>{
-                override fun onResponse(call: Call<Unit>, response: Response<Unit>) {
-                    if(response.isSuccessful){
-                        Toast.makeText(this@EdicionActivity,"Pelicula Actualizada correctamente",Toast.LENGTH_SHORT).show()
-                        finish()
-                    }
-                }
-                override fun onFailure(call: Call<Unit>, t: Throwable) {
-                    TODO("Not yet implemented")
-                }
-
-            })
         }
+        //para volver atrás
         if(item.itemId==item.itemId){
             onBackPressed()
             return true
         }
         return super.onOptionsItemSelected(item)
     }
+
+    override fun onResume() {
+        super.onResume()
+
+        binding=ActivityEdicionBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+
+        val actionBar = actionBar
+        supportActionBar!!.setDisplayHomeAsUpEnabled(true)
+
+        pelicula=intent.extras?.get("Pelicula") as Pelicula
+        binding.etTitulo.setText(pelicula.titulo)
+        binding.etUsuario.setText(pelicula.director)
+        binding.etActor.setText(pelicula.duracion)
+        binding.etNota.setText(pelicula.nota)
+        binding.etUrl.setText(pelicula.url)
+        binding.etGenero.setText(pelicula.genero)
+        binding.etDuraciN.setText(pelicula.duracion)
+
+
+    }
+
+
+    //Función que te permite añadir
+    fun añadir(){
+        pelicula.director=binding.etUsuario.text.toString()
+        pelicula.titulo=binding.etTitulo.text.toString()
+        pelicula.duracion=binding.etDuraciN.text.toString()
+        pelicula.nota=binding.etNota.text.toString()
+        pelicula.url=binding.etUrl.text.toString()
+        var context = this
+
+        val sharedPreferences = getSharedPreferences("sharedPrefs", MODE_PRIVATE)
+        val Token: String ="Bearer "+ sharedPreferences.getString("TOKEN", null)
+        val llamadaApi=ClienteRetrofit.apiRetroFit.update(pelicula,Token)
+
+        llamadaApi.enqueue(object :Callback<Unit>{
+            override fun onResponse(call: Call<Unit>, response: Response<Unit>) {
+                if(response.isSuccessful){
+                    Toast.makeText(this@EdicionActivity,"Pelicula Actualizada correctamente",Toast.LENGTH_SHORT).show()
+                    val intent = Intent(context, ListaPeliculasActivity::class.java)
+                    startActivity(intent)
+                    finish()
+                }
+            }
+            override fun onFailure(call: Call<Unit>, t: Throwable) {
+                TODO("Error")
+            }
+
+        })
+
+
+    }
+
 }

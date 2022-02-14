@@ -37,7 +37,6 @@ class Detalle_Pelicula_Activity : AppCompatActivity() {
         pelicula1 = intent.extras?.get("Pelicula") as Pelicula
 
 
-        //declaración elementos
         val tvTitulo = findViewById<TextView>(R.id.tveTitulo)
         val tvDirector = findViewById<TextView>(R.id.tvDirector)
         val tvDuracion = findViewById<TextView>(R.id.tveDuración)
@@ -47,7 +46,6 @@ class Detalle_Pelicula_Activity : AppCompatActivity() {
         val ivFoto = findViewById<ImageView>(R.id.ivFoto)
         val btllamar = findViewById<Button>(R.id.btLlamar)
 
-        //visualización elementos
         tvTitulo.setText(pelicula1.titulo)
         tvDirector.setText(pelicula1.director)
         tvDuracion.setText(pelicula1.duracion)
@@ -55,17 +53,8 @@ class Detalle_Pelicula_Activity : AppCompatActivity() {
         tvGenero.setText(pelicula1.genero)
         tvAño.setText(pelicula1.año)
         Picasso.get().load(pelicula1.url).into(ivFoto)
-        //error al cargar la foto
 
 
-        /*    if (!pelicula1.url.equals("")) {
-                try {
-                    Picasso.get()
-                        .load("https://sercide.com/wp-content/themes/consultix/images/no-image-found-360x260.png")
-                } catch (e: Exception) {
-                    Toast.makeText(getApplicationContext(), "NO IMAGEN", Toast.LENGTH_SHORT).show()
-                };
-            }*/
 
         val actionBar = actionBar
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
@@ -77,41 +66,8 @@ class Detalle_Pelicula_Activity : AppCompatActivity() {
 
         val context = this
         val loginCall = ClienteRetrofit.apiRetroFit.login(Usuario("", ""))
-/*
-        loginCall.enqueue(object : Callback<Token> {
-            override fun onFailure(call: Call<Token>, t: Throwable) {
-                Log.d("respuesta: onFailure", t.toString())
-            }
 
-            override fun onResponse(call: Call<Token>, response: Response<Token>) {
-                Log.d("respuesta: onResponse", response.toString())
-                val intent =
-                    Intent(this@Detalle_Pelicula_Activity, ListaPeliculasActivity::class.java)
-                startActivity(intent)
-                if (response.code() > 299 || response.code() < 200) {
-                    // Muestro alerta: no se ha podido crear el usuario
-                    Toast.makeText(
-                        context,
-                        "No se ha podido crear el usuario",
-                        Toast.LENGTH_SHORT
-                    )
-                        .show()
-                } else {
-                    val token = response.body()?.token
-                    Log.d("respuesta: token:", token.orEmpty())
-                    val intent = Intent(
-                        this@Detalle_Pelicula_Activity,
-                        ListaPeliculasActivity::class.java
-                    )
-                    // TODO: Muestro mensaje de usuario creado correctamente.
 
-                    // TODO: Guardo en sharedPreferences el token
-
-                    // TODO: Inicio nueva activity
-                }
-
-            }
-        })*/
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -127,24 +83,22 @@ class Detalle_Pelicula_Activity : AppCompatActivity() {
                 .setMessage("La película seleccionada va a ser eliminada, ¿estás seguro?")
                 .setPositiveButton("Aceptar") { _, _ ->
 
-                    val llamadaApi: Call<Unit> =
-                        ClienteRetrofit.apiRetroFit.borrar(
-                            "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYxZjdhMmE2ODgxM2Q2ZTRlNDVmZWQ4MiIsImlhdCI6MTY0NDU3NjgzOCwiZXhwIjoxNjQ0NjYzMjM4fQ.wvL6ffU1xvoL-0WDrUO0R1MclMEqyOFSxFq2e-D5N5s",
-                            pelicula1.id)
+                    val sharedPreferences = getSharedPreferences("sharedPrefs", MODE_PRIVATE)
+                    val Token: String ="Bearer "+ sharedPreferences.getString("TOKEN", null)
+                    val llamadaApi=ClienteRetrofit.apiRetroFit.borrar(Token,pelicula1.id)
+
+
                     llamadaApi.enqueue(object :Callback<Unit>{
                         override fun onResponse(call: Call<Unit>, response: Response<Unit>) {
-                        if(response.isSuccessful){
-                            Toast.makeText(this@Detalle_Pelicula_Activity,"Pelicula Borrada",Toast.LENGTH_SHORT)
-                        }
+                            if(response.isSuccessful){
+                                Toast.makeText(this@Detalle_Pelicula_Activity,"Pelicula borrada",Toast.LENGTH_SHORT)
+                            }
                         }
                         override fun onFailure(call: Call<Unit>, t: Throwable) {
-                            TODO("Not yet implemented")
+                            TODO("La pelicula no se ha borrado")
                         }
-
                     })
                     finish()
-
-
                 }.setNegativeButton("Cancelar", null)
                 .show()
             return true
@@ -154,9 +108,10 @@ class Detalle_Pelicula_Activity : AppCompatActivity() {
             // Iniciar activity de edición
             val intent = Intent(this, EdicionActivity::class.java)
             intent.putExtra("Pelicula", pelicula1)
-            //para editar tvTitulo.text = pelicula1.director.toString()
             startActivity(intent)
-        } else if (item.itemId == item.itemId) {
+        }
+        //Para volver atrás
+        else if (item.itemId == item.itemId) {
             onBackPressed()
             return true
         }
@@ -164,9 +119,6 @@ class Detalle_Pelicula_Activity : AppCompatActivity() {
         return super.onOptionsItemSelected(item)
     }
 }
-
-
-
 
 
 

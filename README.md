@@ -10,3 +10,4 @@
 
 ![Detalle de la peliculas](imagenes/img.png)
 
+prueba

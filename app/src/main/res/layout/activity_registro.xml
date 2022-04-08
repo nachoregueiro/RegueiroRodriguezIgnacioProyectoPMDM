@@ -1,142 +1,146 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".RegistroActivity"><![CDATA[
-    tools:context=".RegistroActivity">
+    android:layout_height="match_parent">
 
-    ]]>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".RegistroActivity">
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/tiUsuario"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="236dp"
-        android:layout_height="68dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="10dp"
-        app:layout_constraintBottom_toTopOf="@+id/tiApellido"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.485"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvLogo"
-        app:startIconDrawable="@drawable/usuario">
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tiUsuario"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="236dp"
+            android:layout_height="68dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="10dp"
+            app:layout_constraintBottom_toTopOf="@+id/tiApellido"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.485"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvLogo"
+            app:startIconDrawable="@drawable/usuario">
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/etUsuario"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:hint="@string/hint_introducir_nombre"
-            tools:ignore="TouchTargetSizeCheck" />
-    </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etUsuario"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="textPersonName"
+                android:hint="@string/hint_introducir_nombre"
+                tools:ignore="TouchTargetSizeCheck" />
+        </com.google.android.material.textfield.TextInputLayout>
 
-    <TextView
-        android:id="@+id/tvLogo"
-        android:layout_width="183dp"
-        android:layout_height="38dp"
-        android:layout_marginTop="16dp"
-        android:text="REGISTRO"
-        android:textAlignment="center"
-        android:textColor="@color/purple_700"
-        android:textSize="28dp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:id="@+id/tvLogo"
+            android:layout_width="183dp"
+            android:layout_height="38dp"
+            android:layout_marginTop="16dp"
+            android:text="REGISTRO"
+            android:textAlignment="center"
+            android:textColor="@color/purple_700"
+            android:textSize="28dp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/btGuardarDatos"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:text="REGISTRARSE"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.461"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tiRepiteContraseña" />
+        <Button
+            android:id="@+id/btGuardarDatos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="REGISTRARSE"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.461"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tiRepiteContraseña" />
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/tiApellido"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="241dp"
-        android:layout_height="68dp"
-        android:layout_marginTop="40dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tiUsuario"
-        app:startIconDrawable="@drawable/ojos2">
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tiApellido"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="241dp"
+            android:layout_height="68dp"
+            android:layout_marginTop="40dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tiUsuario"
+            app:startIconDrawable="@drawable/ojos2">
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/etApellido"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:hint="Introduce tu apellido:"
-            tools:ignore="TouchTargetSizeCheck" />
-    </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etApellido"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="Introduce tu apellido:"
+                android:inputType="textPersonName"
+                tools:ignore="TouchTargetSizeCheck" />
+        </com.google.android.material.textfield.TextInputLayout>
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/tiEmail"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="239dp"
-        android:layout_height="61dp"
-        android:layout_marginStart="5dp"
-        android:layout_marginTop="36dp"
-        android:hint="Introduce email:"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.479"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tiApellido"
-        app:startIconDrawable="@drawable/mail">
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tiEmail"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="239dp"
+            android:layout_height="61dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="36dp"
+            android:hint="Introduce email:"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.479"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tiApellido"
+            app:startIconDrawable="@drawable/mail">
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/etEmail"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            tools:ignore="TouchTargetSizeCheck" />
-    </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etEmail"
+                android:inputType="textEmailAddress"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:ignore="TouchTargetSizeCheck" />
+        </com.google.android.material.textfield.TextInputLayout>
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/tiContraseña"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="232dp"
-        android:layout_height="70dp"
-        android:layout_marginTop="40dp"
-        android:hint="Introduce tu contraseña:"
-        app:layout_constraintBottom_toTopOf="@+id/tiRepiteContraseña"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.486"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tiEmail"
-        app:startIconDrawable="@drawable/cerrado">
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tiContraseña"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="232dp"
+            android:layout_height="70dp"
+            android:layout_marginTop="40dp"
+            android:hint="Introduce tu contraseña:"
+            app:layout_constraintBottom_toTopOf="@+id/tiRepiteContraseña"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.486"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tiEmail"
+            app:startIconDrawable="@drawable/cerrado">
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/etContraseña"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:inputType="textPassword" />
-    </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etContraseña"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="textPassword" />
+        </com.google.android.material.textfield.TextInputLayout>
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/tiRepiteContraseña"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-        android:layout_width="230dp"
-        android:layout_height="66dp"
-        android:layout_marginTop="36dp"
-        android:layout_marginEnd="6dp"
-        android:hint="Repite tu contraseña:"
-        android:inputType="textPassword"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tiContraseña"
-        app:startIconDrawable="@drawable/ojos2">
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tiRepiteContraseña"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="230dp"
+            android:layout_height="66dp"
+            android:layout_marginTop="36dp"
+            android:layout_marginEnd="6dp"
+            android:hint="Repite tu contraseña:"
+            android:inputType="textPassword"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.494"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tiContraseña"
+            app:startIconDrawable="@drawable/ojos2">
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/etRepiteContraseña"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:inputType="textPassword" />
-    </com.google.android.material.textfield.TextInputLayout>
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etRepiteContraseña"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:inputType="textPassword" />
+        </com.google.android.material.textfield.TextInputLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

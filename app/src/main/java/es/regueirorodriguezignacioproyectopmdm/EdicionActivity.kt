@@ -90,10 +90,7 @@ class EdicionActivity : AppCompatActivity() {
         binding.etGenero.setText(pelicula.genero)
         binding.etDuraciN.setText(pelicula.duracion)
 
-
     }
-
-
     //Función que te permite añadir
     fun añadir(){
         pelicula.director=binding.etUsuario.text.toString()

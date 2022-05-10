@@ -14,6 +14,7 @@ import android.util.Log
 import android.util.Patterns
 import android.view.MenuItem
 import android.widget.Button
+import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import androidx.core.view.get
@@ -25,6 +26,7 @@ import retrofit2.Response
 import java.util.regex.Pattern
 
 class RegistroActivity : AppCompatActivity() {
+    private lateinit var etEmail: EditText
     private lateinit var btAtrás: Button
     private lateinit var binding: ActivityRegistroBinding
 
@@ -33,6 +35,7 @@ class RegistroActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityRegistroBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        etEmail = findViewById(R.id.etEmail)
         setTitle("Registro")
 
         //Botón que comprueba el registro
@@ -59,8 +62,18 @@ class RegistroActivity : AppCompatActivity() {
                             Intent(this@RegistroActivity, MainActivity::class.java)
                         Toast.makeText(context, "Usuario creado", Toast.LENGTH_SHORT)
                             .show()
+                        startActivity(intent)
                     }
                 }
             })
+            pasarNombre()
         }
-    }}
+    }
+    private fun pasarNombre() {
+        val sharedPreferences = getSharedPreferences("sharedPrefs", MODE_PRIVATE)
+        val editor = sharedPreferences.edit()
+        editor.apply() {
+            putString("EMAIL", etEmail.text.toString())
+        }.apply()
+    }
+}

@@ -21,7 +21,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
-
+    lateinit var etUsuario: EditText
 
     override fun onCreate(savedInstanceState: Bundle?) {
         Thread.sleep(2000)
@@ -30,10 +30,15 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        etUsuario = findViewById(R.id.etUsuario)
         val context = this
 
         val sharedPreferences = getSharedPreferences("sharedPrefs", MODE_PRIVATE)
         val Token: String? = sharedPreferences.getString("TOKEN", null)
+        val email = sharedPreferences.getString("EMAIL", null)
+        etUsuario.setText(email)
+
+
 
         //Comprobamos si el token está vacio
         if (Token == null){
@@ -70,13 +75,11 @@ class MainActivity : AppCompatActivity() {
             override fun onFailure(call: Call<Token>, t: Throwable) {
                 Log.d("respuesta: onFailure", t.toString())
             }
-
             override fun onResponse(call: Call<Token>, response: Response<Token>) {
                 Log.d("respuesta: onResponse", response.toString())
 
                 if (response.code() > 299 || response.code() < 200) {
                     Toast.makeText(context, "Error,no se pudo entrar", Toast.LENGTH_SHORT).show()
-
                 } else {
                     val token: String? = response.body()?.token
                     val sharedPreferences = getSharedPreferences("sharedPrefs", MODE_PRIVATE)

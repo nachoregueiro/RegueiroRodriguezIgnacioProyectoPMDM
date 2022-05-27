@@ -100,6 +100,9 @@ class EdicionActivity : AppCompatActivity() {
         pelicula.url=binding.etUrl.text.toString()
         var context = this
 
+
+
+
         val sharedPreferences = getSharedPreferences("sharedPrefs", MODE_PRIVATE)
         val Token: String ="Bearer "+ sharedPreferences.getString("TOKEN", null)
         val llamadaApi=ClienteRetrofit.apiRetroFit.update(pelicula,Token)

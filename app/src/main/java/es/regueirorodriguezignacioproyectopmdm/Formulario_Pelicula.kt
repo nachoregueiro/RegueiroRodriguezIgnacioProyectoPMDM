@@ -61,9 +61,14 @@ class Formulario_Pelicula : AppCompatActivity() {
                 val nota = tveNota.text.toString()
                 val genero = tveGenero.text.toString()
                 val año = tveAño.text.toString()
-                val url = tveUrl.text.toString()
+                var url = tveUrl.text.toString()
 
                 peliculas.add(Pelicula(titulo, director, duracion, nota, genero, año, url,null))
+
+
+                if(url==""){
+                    url="https://thumbs.dreamstime.com/b/no-image-available-icon-flat-vector-no-image-available-icon-flat-vector-illustration-132482953.jpg";
+                }
 
                 finish()
 
